@@ -20,9 +20,9 @@ psvn2c_abstraction.c:
 
 .PRECIOUS: %.c
 
-%.succ: %.c ${IMPLEMENTATION}/succ.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/succ.cpp -include $< -o $@
+%.out: %.c ${IMPLEMENTATION}/bfs.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/bfs.cpp -include $< -o $@
 
 .PHONY : clean
 clean:
-	rm -f *.succ *.o sliding_tile1x3.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	rm -f *.out *.o sliding_tile1x3.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
