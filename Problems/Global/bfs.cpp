@@ -41,15 +41,17 @@ int main( int argc, char **argv ){
 
     list<pair<state_t*, int>> stack;
     stack.push_back(make_pair(state, 0));
+    int current_deep = 0;
     
     while (stack.size() > 0){        
         ruleid_iterator_t iter; 
         int ruleid; 
         pair<state_t*, int> node =  stack.front();
         
-        print_state( stdout, node.first );
-        printf(" deep: %d\n", node.second);
-        
+        if (current_deep < node.second){  
+            current_deep = node.second;
+            printf(" deep: %d\n", current_deep);
+        }
         init_fwd_iter( &iter, node.first );
         while ( (ruleid = next_ruleid( &iter )) >= 0){
             state_t* child = (state_t*) malloc(sizeof(state_t));
