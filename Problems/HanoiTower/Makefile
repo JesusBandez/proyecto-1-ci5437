@@ -1,6 +1,6 @@
 CC = gcc
 CXX = g++
-OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable
+OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable -lstdc++
 PSVNOPT = --no_state_map --no_abstraction --no_backwards_moves --history_len=0
 PSVN = ../../PSVN
 IMPLEMENTATION = ../Global
@@ -20,8 +20,8 @@ psvn2c_abstraction.c:
 
 .PRECIOUS: %.c
 
-%.succ: %.c ${IMPLEMENTATION}/succ.c
-	$(CC) $(OPT) ${IMPLEMENTATION}/succ.c -include $< -o $@
+%.succ: %.c ${IMPLEMENTATION}/succ.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/succ.cpp -include $< -o $@
 
 .PHONY : clean
 clean:

@@ -8,13 +8,16 @@ Copyright (C) 2013 by the PSVN Research Group, University of Alberta
 #include <inttypes.h>
 #include <assert.h>
 #include <sys/time.h>
+#include <iostream>
+#include <cstring>
 
+using namespace std;
 #define  MAX_LINE_LENGTH 999 
 
 int main( int argc, char **argv )
 {
+
 // VARIABLES FOR INPUT
-    char str[ MAX_LINE_LENGTH +1 ] ;
     ssize_t nchars; 
     state_t state; // state_t is defined by the PSVN API. It is the type used for individual states.
 
@@ -24,15 +27,20 @@ int main( int argc, char **argv )
     int ruleid ; // an iterator returns a number identifying a rule
     int childCount;
 
-// READ A LINE OF INPUT FROM stdin
-    printf("Please enter a state followed by ENTER: ");
-    if ( fgets(str, sizeof str, stdin) == NULL ) {
-	printf("Error: empty input line.\n");
-	return 0; 
-    }
+    std::string input;
+    std::string str = "";
+    while (std::getline(std::cin, input)) {
+        str = str + input + "\n";
+    };
+
+
+    char* str_state = new char[str.length()];
+    strcpy(str_state, str.c_str());
+    
+
 
 // CONVERT THE STRING TO A STATE
-    nchars = read_state( str, &state );
+    nchars = read_state( str_state, &state );
     if (nchars <= 0) {
 	printf("Error: invalid state entered.\n");
 	return 0; 
@@ -56,6 +64,6 @@ int main( int argc, char **argv )
     if (childCount == 0) {
 	printf("Your state has no children.\n");
     }
-
     return 0;
+
 } // end main
