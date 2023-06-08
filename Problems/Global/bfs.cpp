@@ -1,6 +1,9 @@
-/* This program reads a state from stdin and prints out its successors.
+/* Implementacion del algoritmo BFS
 
-Copyright (C) 2013 by the PSVN Research Group, University of Alberta
+Usado para iniciar en el estado objetivo de un problema y avanzar infinitamente
+generando todos los nodos que pueda. No importa si estan repetidos.
+
+Cada vez que logra llegar a una nueva profundidad, la imprime.
 */
 
 #include <stdlib.h>

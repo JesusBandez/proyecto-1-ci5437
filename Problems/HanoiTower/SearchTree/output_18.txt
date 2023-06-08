@@ -1,0 +1,12 @@
+The state you entered is: 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+ deep: 1
+ deep: 2
+ deep: 3
+ deep: 4
+ deep: 5
+ deep: 6
+ deep: 7
+ deep: 8
+ deep: 9
+ deep: 10
+ deep: 11
