@@ -1,0 +1,60 @@
+# This file was created by the abstractor program.
+# The source PSVN file was: 15puzzle.psvn
+# The abstraction used is stored in file: 15puzzleAbstraction1.abst
+
+DOMAIN TILE 16
+  B 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+16
+TILE TILE TILE TILE TILE 1 1 1 1 1 1 1 1 1 1 1
+
+X - - - B - - - - - - - - - - - => B - - - X - - - - - - - - - - - LABEL UP COST 1
+- X - - - - - - - - - - - - - - => - B - - - - - - - - - - - - - - LABEL UP COST 1
+- - X - - - - - - - - - - - - - => - - B - - - - - - - - - - - - - LABEL UP COST 1
+- - - X - - - - - - - - - - - - => - - - B - - - - - - - - - - - - LABEL UP COST 1
+- - - - X - - - - - - - - - - - => - - - - B - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UP COST 1
+X B - - - - - - - - - - - - - - => B X - - - - - - - - - - - - - - LABEL LEFT COST 1
+- X B - - - - - - - - - - - - - => - B X - - - - - - - - - - - - - LABEL LEFT COST 1
+- - X B - - - - - - - - - - - - => - - B X - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - X - - - - - - - - - - - => - - - - B - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFT COST 1
+B X - - - - - - - - - - - - - - => X B - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- B X - - - - - - - - - - - - - => - X B - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - B X - - - - - - - - - - - - => - - X B - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - B - - - - - - - - - - - => - - - - X - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHT COST 1
+B - - - X - - - - - - - - - - - => X - - - B - - - - - - - - - - - LABEL DOWN COST 1
+- B - - - - - - - - - - - - - - => - X - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - B - - - - - - - - - - - - - => - - X - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - B - - - - - - - - - - - - => - - - X - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - B - - - - - - - - - - - => - - - - X - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWN COST 1
+
+GOAL B 1 2 3 4 - - - - - - - - - - -
