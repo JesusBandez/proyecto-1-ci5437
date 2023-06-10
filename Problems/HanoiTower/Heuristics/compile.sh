@@ -1,3 +1,3 @@
-make HanoiTower12DiskAbstraction.out
-make HanoiTower14DiskAbstraction.out
+make HanoiTower12DiskAbstraction1BottomDiskLess.out
+make HanoiTower12DiskAbstraction11TopDiskLess.out
 make clean
