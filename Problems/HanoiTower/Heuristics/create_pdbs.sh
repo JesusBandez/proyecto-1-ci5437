@@ -1,0 +1,2 @@
+#./HanoiTower12DiskAbstraction.out < ../Definitions/GoalState12Abstraction.txt 12DiskAbstraction1DiskLess.pdb
+./HanoiTower14DiskAbstraction.out < ../Definitions/GoalState14Abstraction.txt 14DiskAbstraction1DiskLess.pdb

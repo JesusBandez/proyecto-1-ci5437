@@ -40,6 +40,7 @@ int main( int argc, char **argv ){
     print_state( stdout, state );
     printf("\n");
 
+    free(str_state);
     // Algoritmo bfs
     list<pair<state_t*, int>> stack;
     stack.push_back(make_pair(state, 0));
@@ -47,16 +48,26 @@ int main( int argc, char **argv ){
     // state map donde se guardan los costos para cada estado.
     state_map_t *PDB = new_state_map(); 
     state_map_add(PDB, state, 0);
-
+    int current_deep = 0;
     while (stack.size() > 0){        
         ruleid_iterator_t iter;
         int ruleid; 
         /* Extraer el nodo a expandir*/
         pair<state_t*, int> node =  stack.front();
+        stack.pop_front();
 
-        printf("%d |", node.second);
-        print_state( stdout, node.first );
-        printf("\n");
+
+
+        /* Comprobar si ya no ha sido expandido*/
+        const int *d = state_map_get(PDB, node.first);
+        if (*d < node.second){
+            free(node.first);
+            continue;
+        }
+        if (current_deep < node.second){
+            printf("%d\n", current_deep);
+            current_deep = node.second;
+        }
 
         /* Expandir el nodo */
         init_bwd_iter( &iter, node.first );
@@ -70,11 +81,15 @@ int main( int argc, char **argv ){
             if (old_predecesor==NULL){
                 state_map_add( PDB, predecesor, node.second +1);
                 stack.push_back(make_pair(predecesor, node.second+1));
+            } else {
+                free(predecesor);
             }
+            
         }
         
-        stack.pop_front();
         free(node.first);
+        
+        
     };
 
     FILE *file;
