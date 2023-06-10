@@ -40,7 +40,7 @@ int main( int argc, char **argv ){
     print_state( stdout, state );
     printf("\n");
 
-    free(str_state);
+    
     // Algoritmo bfs
     list<pair<state_t*, int>> stack;
     stack.push_back(make_pair(state, 0));
@@ -49,6 +49,7 @@ int main( int argc, char **argv ){
     state_map_t *PDB = new_state_map(); 
     state_map_add(PDB, state, 0);
     int current_deep = 0;
+    printf("%d\n", current_deep);
     while (stack.size() > 0){        
         ruleid_iterator_t iter;
         int ruleid; 
@@ -64,9 +65,9 @@ int main( int argc, char **argv ){
             free(node.first);
             continue;
         }
-        if (current_deep < node.second){
-            printf("%d\n", current_deep);
+        if (current_deep < node.second){            
             current_deep = node.second;
+            printf("%d\n", current_deep);
         }
 
         /* Expandir el nodo */
