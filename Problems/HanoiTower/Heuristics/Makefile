@@ -25,4 +25,4 @@ psvn2c_abstraction.c:
 
 .PHONY : clean
 clean:
-	rm -f  *.o HanoiTower12Disk.c HanoiTower14Disk.c HanoiTower18Disk.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c HanoiTower12DiskAbstraction.c HanoiTower14DiskAbstraction.c 
+	rm -f  *.o HanoiTower12Disk.c HanoiTower14Disk.c HanoiTower18Disk.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c HanoiTower12DiskAbstraction.c HanoiTower14DiskAbstraction.c HanoiTower*.c
