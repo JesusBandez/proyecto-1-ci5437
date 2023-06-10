@@ -5,4 +5,5 @@ make 24puzzleAbstraction1.out
 make 24puzzleAbstraction2.out
 make 24puzzleAbstraction3.out
 make 24puzzleAbstraction4.out
+make 24puzzleAbstraction5.out
 make clean
