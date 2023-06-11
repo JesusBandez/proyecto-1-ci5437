@@ -24,6 +24,9 @@ psvn2c_abstraction.c:
 %.ida: %.c ${IMPLEMENTATION}/ida.c
 	$(CC) $(OPT) ${IMPLEMENTATION}/ida.c -include $< -o $@
 
+%.a: %.c ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
+	
 .PRECIOUS: %.c
 
 %.out: %.c ${IMPLEMENTATION}/heuristicsBfs.cpp
