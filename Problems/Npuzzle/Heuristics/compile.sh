@@ -1,3 +1,5 @@
+make 15puzzle.out
+make 24puzzle.out
 make 15puzzleAbstraction1.out
 make 15puzzleAbstraction2.out
 make 15puzzleAbstraction3.out
