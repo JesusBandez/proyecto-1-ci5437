@@ -25,4 +25,4 @@ psvn2c_abstraction.c:
 
 .PHONY : clean
 clean:
-	rm -f  *.o 15puzzle.c 24puzzle.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	rm -f  *.o 3x3RubikCube.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
