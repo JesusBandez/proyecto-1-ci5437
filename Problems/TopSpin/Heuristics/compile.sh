@@ -1,10 +1,10 @@
-make HanoiTower12DiskAbstraction1BottomDiskLess.out
-make HanoiTower12DiskAbstraction11TopDiskLess.out
+make TopSpin12EvenToken.out
+make TopSpin12OddToken.out
 
-make HanoiTower14DiskAbstraction3BottomDiskless.out
-make HanoiTower14DiskAbstraction11TopDiskless.out
+make TopSpin14EvenToken.out
+make TopSpin14OddToken.out
 
-make HanoiTower18DiskAbstraction7BottomDiskless.out
-make HanoiTower18DiskAbstraction11TopDiskLess.out
+make TopSpin17EvenToken.out
+make TopSpin17OddToken.out
 
 make clean
