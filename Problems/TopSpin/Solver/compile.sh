@@ -1,5 +1,7 @@
 cd ../Heuristics
 
+./compile.sh
+
 make TopSpin12Token.ida
 mv ./TopSpin12Token.ida ../Solver
 

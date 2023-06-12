@@ -30,7 +30,7 @@ abstraction_data_t* read_abstraction_data(char* prefix)
     data = (abstraction_data_t*) malloc (sizeof(abstraction_data_t));
 
     /* get the abstraction filename by adding the extension ".abst" to the prefix */
-    char filename[1024];
+    char filename[2048];
     strcpy(filename, prefix);
     strcat(filename, ".abst");
 
@@ -40,7 +40,7 @@ abstraction_data_t* read_abstraction_data(char* prefix)
         return NULL;
     }
     /* get the pattern database filename by adding the extension ".state_map" to the prefix */
-    char map_filename[1024];
+    char map_filename[2048];
     strcpy(map_filename, prefix);
     strcat(map_filename, ".pdb");
     
@@ -212,7 +212,7 @@ int main( int argc, char **argv )
     int trials, d, total_d;
     const abstraction_data_t* absts[argc-1];
 
-    char line[ 4096 ];
+    char line[ 8192 ];
     struct timeval start, end, total;
     total.tv_sec = 0;
     total.tv_usec = 0;
@@ -225,7 +225,7 @@ int main( int argc, char **argv )
         /* read the abstraction and pattern database (state_map) */
         for (int i=1; i<argc; i++){
             absts[i-1] = read_abstraction_data( argv[i] );
-            if (absts[i] == NULL) {
+            if (absts[i-1] == NULL) {
                 return EXIT_FAILURE;
             }
         }
@@ -237,11 +237,11 @@ int main( int argc, char **argv )
     total_generated = 0;
     printf("Enter a start state (empty input line to quit): ");
     for( trials = 0;
-         fgets( line, 4096, stdin ) != NULL
+         fgets( line, 8192, stdin ) != NULL
              && read_state( line, &state ) > 0;
          ++trials ) {
         
-        printf( "problem %d: ", trials + 1 );
+        
         print_state( stdout, &state );
         printf( "\n" );
         gettimeofday( &start, NULL );
@@ -275,7 +275,7 @@ int main( int argc, char **argv )
         total_expanded  += nodes_expanded_for_startstate;
         total_generated += nodes_generated_for_startstate;
 
-        printf("Enter a start state (empty input line to quit): ");
+        
     }
 
     
