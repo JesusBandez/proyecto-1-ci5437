@@ -1,5 +1,5 @@
 /* if HAVE_FWD_MOVE_PRUNING is defined then does move pruning. If not, it does parent pruning. */
-
+#define HAVE_FWD_MOVE_PRUNING
 #include <stdlib.h>
 #include <stdio.h>
 #include <inttypes.h>
