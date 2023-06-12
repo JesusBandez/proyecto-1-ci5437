@@ -1,7 +1,7 @@
 CC = gcc
 CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable -lstdc++
-PSVNOPT = --state_map --no_abstraction --backwards_moves --history_len=0
+PSVNOPT = --state_map --backwards_moves --history_len=0
 PSVN = ../../../PSVN
 IMPLEMENTATION = ../../Global
 
@@ -18,6 +18,15 @@ psvn2c_abstraction.c:
 	${PSVN}/psvn2c  $(PSVNOPT) --name=$(*F)  < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
+%.c: %.psvn
+	${PSVN}/psvn2c $(PSVNOPT) --name=$(*F)  < $< > $@
+
+%.ida: %.c ${IMPLEMENTATION}/ida.c
+	$(CC) $(OPT) ${IMPLEMENTATION}/ida.c -include $< -o $@
+
+%.a: %.c ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
+
 .PRECIOUS: %.c
 
 %.out: %.c ${IMPLEMENTATION}/heuristicsBfs.cpp
@@ -25,4 +34,4 @@ psvn2c_abstraction.c:
 
 .PHONY : clean
 clean:
-	rm -f  *.o HanoiTower12Disk.c HanoiTower14Disk.c HanoiTower18Disk.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c TopSpin*.c
+	rm -f  *.o psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c TopSpin*.c
