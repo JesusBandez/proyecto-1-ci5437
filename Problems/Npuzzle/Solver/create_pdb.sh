@@ -1,5 +1,5 @@
 cd ../Heuristics
-#./create_pdbs.sh
+./create_pdbs.sh
 
 mv ./24puzzleAbstraction1.pdb ../Definitions/
 mv ./24puzzleAbstraction2.pdb ../Definitions/

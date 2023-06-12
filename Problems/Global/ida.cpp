@@ -98,17 +98,12 @@ int abstraction_data_lookup(const abstraction_data_t** absts,
 
 int dfs_heur( const abstraction_data_t **absts,
               state_t *state,
-#ifdef HAVE_FWD_MOVE_PRUNING
-              const int history,           // for move pruning
-#else
-              const state_t *parent_state, // for parent pruning
-#endif
+              const int history,
               const int bound, int *next_bound, int current_g, int argc )
 {
     int ruleid;
-#ifdef HAVE_FWD_MOVE_PRUNING
     int c_history;
-#endif
+
     ruleid_iterator_t iter;
     state_t child;
 
@@ -117,19 +112,14 @@ int dfs_heur( const abstraction_data_t **absts,
     init_fwd_iter( &iter, state );
     while( ( ruleid = next_ruleid( &iter ) ) >= 0 ) {
 
-#ifdef HAVE_FWD_MOVE_PRUNING
+
         if( !fwd_rule_valid_for_history( history, ruleid ) )
             continue;
         c_history = next_fwd_history( history, ruleid );
-#endif
+
 
         apply_fwd_rule( ruleid, state, &child );
         nodes_generated_for_bound++;
-
-#ifndef HAVE_FWD_MOVE_PRUNING
-        if( compare_states( &child, parent_state ) == 0 )   // parent pruning
-            continue;
-#endif
 
         const int move_cost = get_fwd_rule_cost( ruleid );
                 
@@ -145,12 +135,8 @@ int dfs_heur( const abstraction_data_t **absts,
             if (current_g + move_cost + child_h > bound) {
                *next_bound = myMIN( *next_bound, current_g + move_cost + child_h );
             } else {
-               if( dfs_heur( absts, &child,
-        #ifdef HAVE_FWD_MOVE_PRUNING
+               if( dfs_heur( absts, &child,   
                              c_history,  // move pruning
-        #else
-                             state,      // parent pruning
-        #endif
                              bound, next_bound, current_g + move_cost, argc ) ) 
                {
                    return 1;
@@ -179,13 +165,7 @@ int idastar( const abstraction_data_t **absts, state_t *state, int argc )
         next_bound = INT_MAX;
         nodes_expanded_for_bound  = 0;
         nodes_generated_for_bound = 0;
-        done = dfs_heur( absts, state,
-#ifdef HAVE_FWD_MOVE_PRUNING
-                             init_history,  // move pruning
-#else
-                             state,         // parent pruning
-#endif
-                             bound, &next_bound, 0, argc );
+        done = dfs_heur( absts, state, init_history, bound, &next_bound, 0, argc );
         printf( "bound: %d, expanded: %" PRId64 ", generated: %" PRId64 "\n", bound, nodes_expanded_for_bound, nodes_generated_for_bound );
         nodes_expanded_for_startstate  += nodes_expanded_for_bound;
         nodes_generated_for_startstate += nodes_generated_for_bound;
