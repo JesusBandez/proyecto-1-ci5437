@@ -1,7 +1,7 @@
 CC = gcc
 CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable -lstdc++
-PSVNOPT = --no_state_map --no_abstraction --no_backwards_moves --history_len=0
+PSVNOPT = --no_state_map --no_abstraction --no_backwards_moves --history_len=$(hist)
 PSVN = ../../../PSVN
 IMPLEMENTATION = ../../Global
 
@@ -21,7 +21,7 @@ psvn2c_abstraction.c:
 .PRECIOUS: %.c
 
 %.out: %.c ${IMPLEMENTATION}/bfs.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/bfs.cpp -include $< -o $@
+	$(CXX) $(OPT) ${IMPLEMENTATION}/bfs.cpp -include $< -o prunning$(hist)$@
 
 .PHONY : clean
 clean:
