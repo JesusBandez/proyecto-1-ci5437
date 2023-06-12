@@ -1,4 +1,7 @@
-for i in 12 14 18
+for j in 0 1
 do
-    timeout 10s stdbuf -oL ./HanoiTower${i}Disk.out < ../Definitions/GoalState${i}.txt > output_${i}.txt
+    for i in 12 14 18
+    do
+        timeout 3s stdbuf -oL ./prunning${j}HanoiTower${i}Disk.out < ../Definitions/GoalState${i}.txt > output_${i}Prunning${j}.txt
+    done
 done
