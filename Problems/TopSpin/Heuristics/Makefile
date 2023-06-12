@@ -24,8 +24,8 @@ psvn2c_abstraction.c:
 %.ida: %.c ${IMPLEMENTATION}/ida.cpp
 	$(CXX) $(OPT) ${IMPLEMENTATION}/ida.cpp -include $< -o $@
 
-%.a: %.c ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
+%.a: %.c ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
 
 .PRECIOUS: %.c
 
@@ -34,4 +34,4 @@ psvn2c_abstraction.c:
 
 .PHONY : clean
 clean:
-	rm -f  *.o psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c TopSpin*.c
+	rm -f  *.o psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c TopSpin*.c priority_queue.hpp
