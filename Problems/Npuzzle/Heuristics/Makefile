@@ -21,11 +21,11 @@ psvn2c_abstraction.c:
 %.c: %.psvn
 	${PSVN}/psvn2c $(PSVNOPT) --name=$(*F)  < $< > $@
 
-%.ida: %.c ${IMPLEMENTATION}/ida.c
-	$(CC) $(OPT) ${IMPLEMENTATION}/ida.c -include $< -o $@
+%.ida: %.c ${IMPLEMENTATION}/ida.cpp
+	$(CC) $(OPT) ${IMPLEMENTATION}/ida.cpp -include $< -o $@
 
-%.a: %.c ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.cpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
+%.a: %.c ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp -include $< -o $@
 	
 .PRECIOUS: %.c
 
