@@ -5,7 +5,7 @@
 #include <inttypes.h>
 #include <assert.h>
 #include <sys/time.h>
-
+#include <list>
 
 
 #define myMAX(x,y) (((x)>(y))?(x):(y))
@@ -63,34 +63,47 @@ abstraction_data_t* read_abstraction_data(char* prefix)
     return data;
 }
 
-void destroy_abstraction_data(abstraction_data_t* data)
+void destroy_abstraction_data(abstraction_data_t** data, int argc)
 {
-    destroy_abstraction(data->abst);
-    destroy_state_map(data->map);
-    free(data);
+    for (int i=0; i<argc-1; i++){
+        destroy_abstraction(data[i]->abst);
+        destroy_state_map(data[i]->map);
+        free(data[i]);
+    };
+
 }
 
-int abstraction_data_lookup(const abstraction_data_t* abst, 
-                            const state_t* state)
+int abstraction_data_lookup(const abstraction_data_t** absts, 
+                            const state_t* state,
+                            int argc)
 {
-    state_t abst_state;
-    abstract_state( abst->abst, state, &abst_state );
-    int *h;
-    h = state_map_get( abst->map, &abst_state );
-    if (h == NULL) {
+    int foo = 0;
+    int* current_best_h = &foo;
+    for (int i=1; i<argc; i++){
+        state_t abst_state;
+        abstract_state( absts[i-1]->abst, state, &abst_state );
+        int *h;
+        h = state_map_get( absts[i-1]->map, &abst_state );
+        if (h != NULL and *h > *current_best_h) {
+            current_best_h = h;
+        };
+    };
+
+    if (*current_best_h == 0){
         return INT_MAX;
-    }
-    return *h;
+    } else {
+        return *current_best_h;
+    }    
 }
 
-int dfs_heur( const abstraction_data_t *abst,
+int dfs_heur( const abstraction_data_t **absts,
               state_t *state,
 #ifdef HAVE_FWD_MOVE_PRUNING
               const int history,           // for move pruning
 #else
               const state_t *parent_state, // for parent pruning
 #endif
-              const int bound, int *next_bound, int current_g )
+              const int bound, int *next_bound, int current_g, int argc )
 {
     int ruleid;
 #ifdef HAVE_FWD_MOVE_PRUNING
@@ -128,17 +141,17 @@ int dfs_heur( const abstraction_data_t *abst,
                continue;
             }
         } else {
-            int child_h = abstraction_data_lookup( abst, &child );
+            int child_h = abstraction_data_lookup( absts, &child, argc );
             if (current_g + move_cost + child_h > bound) {
                *next_bound = myMIN( *next_bound, current_g + move_cost + child_h );
             } else {
-               if( dfs_heur( abst, &child,
+               if( dfs_heur( absts, &child,
         #ifdef HAVE_FWD_MOVE_PRUNING
                              c_history,  // move pruning
         #else
                              state,      // parent pruning
         #endif
-                             bound, next_bound, current_g + move_cost ) ) 
+                             bound, next_bound, current_g + move_cost, argc ) ) 
                {
                    return 1;
                 }
@@ -151,7 +164,7 @@ int dfs_heur( const abstraction_data_t *abst,
 
 
 
-int idastar( const abstraction_data_t *abst, state_t *state )
+int idastar( const abstraction_data_t **absts, state_t *state, int argc )
 {
     int next_bound, bound, done;
 
@@ -161,18 +174,18 @@ int idastar( const abstraction_data_t *abst, state_t *state )
     if (is_goal(state)) { return 0; }
 
     best_soln_sofar = INT_MAX;
-    bound = abstraction_data_lookup( abst, state ); // initial bound = h(start)
+    bound = abstraction_data_lookup( absts, state, argc ); // initial bound = h(start)
     while (1) {
         next_bound = INT_MAX;
         nodes_expanded_for_bound  = 0;
         nodes_generated_for_bound = 0;
-        done = dfs_heur( abst, state,
+        done = dfs_heur( absts, state,
 #ifdef HAVE_FWD_MOVE_PRUNING
                              init_history,  // move pruning
 #else
                              state,         // parent pruning
 #endif
-                             bound, &next_bound, 0 );
+                             bound, &next_bound, 0, argc );
         printf( "bound: %d, expanded: %" PRId64 ", generated: %" PRId64 "\n", bound, nodes_expanded_for_bound, nodes_generated_for_bound );
         nodes_expanded_for_startstate  += nodes_expanded_for_bound;
         nodes_generated_for_startstate += nodes_generated_for_bound;
@@ -197,22 +210,26 @@ int main( int argc, char **argv )
     int64_t total_expanded;  // the total number of nodes expanded over all the start states
     int64_t total_generated; // the total number of nodes generated over all the start states
     int trials, d, total_d;
-    abstraction_data_t* abst;
+    const abstraction_data_t* absts[argc-1];
 
     char line[ 4096 ];
     struct timeval start, end, total;
     total.tv_sec = 0;
     total.tv_usec = 0;
+
     
-    if( argc != 2 ) {
+    if( argc < 2 ) {
         printf("There must 1 command line argument, the prefix of the abstraction and pattern database to use.\n");
         return EXIT_FAILURE;
     } else {
- /* read the abstraction and pattern database (state_map) */
-        abst = read_abstraction_data( argv[1] );
-        if (abst == NULL) {
-            return EXIT_FAILURE;
+        /* read the abstraction and pattern database (state_map) */
+        for (int i=1; i<argc; i++){
+            absts[i-1] = read_abstraction_data( argv[i] );
+            if (absts[i] == NULL) {
+                return EXIT_FAILURE;
+            }
         }
+
     }
 
     total_d = 0;
@@ -229,7 +246,7 @@ int main( int argc, char **argv )
         printf( "\n" );
         gettimeofday( &start, NULL );
 
-        d = idastar( abst, &state );
+        d = idastar( absts, &state, argc );
                 
         gettimeofday( &end, NULL );
         end.tv_sec -= start.tv_sec;
@@ -264,8 +281,7 @@ int main( int argc, char **argv )
     
     printf( "\ntotal: depth: %d, expansion: %" PRId64 ", generation: %" PRId64 ", %zd.%06zd seconds\n",
             total_d, total_expanded, total_generated, total.tv_sec, total.tv_usec );
-    
-    destroy_abstraction_data( abst );
+
     
     return EXIT_SUCCESS;
 }
