@@ -64,16 +64,20 @@ void destruir_abstraccion(abstraction_data_t* data)
 }
 
 // retorna el valor del estado actual buscando en el mapa de estados, es decir, en la PDB
-int buscar_valor_en_pdb(const abstraction_data_t* abst, const state_t* state)
+int buscar_valor_en_pdb(abstraction_data_t* abst, state_t* state)
 {
-    state_t abst_state;
-    abstract_state( abst->abst, state, &abst_state );
-    int *h;
-    h = state_map_get( abst->map, &abst_state );
-    if (h == NULL) {
-        return INT_MAX;
-    }
-    return *h;
+  printf("buscando valor en pdb \n");
+  state_t abst_state;
+  printf("creando estado abstracto en buscar valor en pdb\n");
+  abstract_state( abst->abst, state, &abst_state );
+  int *h;
+  printf("buscando valor en mapa de estados \n");
+  h = state_map_get( abst->map, &abst_state );
+  printf("valor encontrado en mapa de estados \n");
+  if (h == NULL) {
+      return INT_MAX;
+  }
+  return *h;
 }
 
 int heuristica(){
@@ -81,41 +85,47 @@ int heuristica(){
 }
 
 // best_first_search con heuristica admisible (A*)
-int a_star(const abstraction_data_t *abst, state_t *state) {
+int a_star(abstraction_data_t *abst, state_t *state) {
 
   state_t child;
   ruleid_iterator_t iter; // ruleid_terator_t is the type defined by the PSVN API successor/predecessor iterators.
-  int ruleid, childCount;
+  int ruleid, childCount, solucion;
 
   nodos_expandidos = 0;
   nodos_generados = 0;
 
   // estado objetivo
+  printf("verificacion estado objetivo: \n");
   if (is_goal(state)) { return 0; }
 
   //int PriorityQueue<T>::Add(int f, int g, const T& data)
   // f valor heuristica
   // g costo del camino o distancia
   // data estado
+
+  printf("creacion cola \n");
   PriorityQueue<state_t> q; // ordered by f-value
   //set_color(init(), Gray);
   //set_distance(init(), 0);
-
+  printf("Agregar a cola de prioridad \n");
   // se agrega el estado a la cola de prioridad
-  q.Add(buscar_valor_en_pdb(abst, state), 0, *state);  
+  q.Add(buscar_valor_en_pdb(abst, state), 0, *state);
+  printf("estado agregado a cola de prioridad \n");
+  child = q.Top();
+  print_state( stdout, &child );
   while (!q.Empty()) {
 
     state_t ns = q.Top();
     q.Pop();
 
     state_t n = q.Top();
-    if (q.CurrentPriority() < buscar_valor_en_pdb(abst,ns)) {
+    if (q.CurrentPriority() < buscar_valor_en_pdb(abst,&ns)) {
       
-      q.Modify(buscar_valor_en_pdb(abst,ns), q.CurrentPriority(), ns);
-      solucion = buscar_valor_en_pdb(abst,ns);
+      q.Modify(buscar_valor_en_pdb(abst,&ns), q.CurrentPriority(),0,  ns);
+      solucion = buscar_valor_en_pdb(abst,&ns);
       nodos_expandidos  += 1;
-      if (is_goal(q.Top())) {
-        return ns;
+      if (is_goal(&n)) {
+        return profundidad;
       }
 
       // se agregan todos los hijos del estado a la cola de prioridad
@@ -152,6 +162,8 @@ int main(int argc, char **argv)
   abstraction_data_t* abst;
   char line[ 4096 ];
 
+  printf("argumentos: %s , %s \n", argv[1], argv[2]);
+
   if( argc != 3 ) {
     printf("Deben haber 2 argumentos: la ruta al archivo.abst y la ruta al archivo .pdb (state_map).\n");
     return EXIT_FAILURE;
@@ -171,6 +183,7 @@ int main(int argc, char **argv)
     print_state( stdout, &state );
     printf( "\n" );
     
+    printf("entrado A* \n");
     depth = a_star( abst, &state );
 
     if ( profundidad == INT64_MAX ) {
