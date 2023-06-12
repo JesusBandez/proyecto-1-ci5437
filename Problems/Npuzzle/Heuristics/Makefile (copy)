@@ -1,7 +1,7 @@
 CC = gcc
 CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable -lstdc++
-PSVNOPT = --state_map --backwards_moves --history_len=0
+PSVNOPT = --fwd_history_len=0 --bwd_history_len=0  --backwards_moves --state_map
 PSVN = ../../../PSVN
 IMPLEMENTATION = ../../Global
 
@@ -24,10 +24,9 @@ psvn2c_abstraction.c:
 %.ida: %.c ${IMPLEMENTATION}/ida.cpp
 	$(CXX) $(OPT) ${IMPLEMENTATION}/ida.cpp -include $< -o $@
 
-%.a: %.c ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a.cpp -include $< -o $@
-
-
+%.a: %.c ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp -include $< -o $@
+	
 .PRECIOUS: %.c
 
 %.out: %.c ${IMPLEMENTATION}/heuristicsBfs.cpp
@@ -35,4 +34,4 @@ psvn2c_abstraction.c:
 
 .PHONY : clean
 clean:
-	rm -f  *.o HanoiTower12Disk.c HanoiTower14Disk.c HanoiTower18Disk.c psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c HanoiTower12DiskAbstraction.c HanoiTower14DiskAbstraction.c HanoiTower*.c
+	rm -f  *.o psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c

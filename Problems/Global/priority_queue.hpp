@@ -80,6 +80,8 @@ void PriorityQueue<T>::Bucket::Modify(int g, int index, const T& data)
     // if (g >= (int)m_stacks.size() || index >= m_stacks[g].size()) {
     //     printf("%d %d | %d %d\n", g, index, m_stacks.size(), m_stacks[g].size());
     // }
+    printf("g : %d \n", g);
+    printf("bucket size : %d \n", (int)m_stacks.size());
     assert(g < (int)m_stacks.size());
     assert(index < (int)m_stacks[g].size());
     m_stacks[g][index] = data;
@@ -102,6 +104,9 @@ PriorityQueue<T>::PriorityQueue()
 template<typename T>
 void PriorityQueue<T>::Modify(int f, int g, int index, const T& data)
 {
+    //printf("g : %d \n", g);
+    //printf("f : %d \n", f);
+    //printf("bucket size : %d \n", (int)m_buckets.size());
     assert(f < (int)m_buckets.size());
     m_buckets[f].Modify(g, index, data);
 }

@@ -3,6 +3,8 @@
 #include <inttypes.h>
 #include <assert.h>
 #include <sys/time.h>
+#include <iostream>
+#include <queue>
 
 #include "priority_queue.hpp"
 
@@ -66,14 +68,15 @@ void destruir_abstraccion(abstraction_data_t* data)
 // retorna el valor del estado actual buscando en el mapa de estados, es decir, en la PDB
 int buscar_valor_en_pdb(abstraction_data_t* abst, state_t* state)
 {
-  printf("buscando valor en pdb \n");
+  //printf("buscando valor en pdb \n");
   state_t abst_state;
-  printf("creando estado abstracto en buscar valor en pdb\n");
+  //printf("creando estado abstracto en buscar valor en pdb\n");
   abstract_state( abst->abst, state, &abst_state );
   int *h;
-  printf("buscando valor en mapa de estados \n");
+  //printf("buscando valor en mapa de estados \n");
   h = state_map_get( abst->map, &abst_state );
-  printf("valor encontrado en mapa de estados \n");
+  //printf("valor encontrado en mapa de estados \n");
+  //printf("valor encontrado: %d \n", *h);
   if (h == NULL) {
       return INT_MAX;
   }
@@ -110,28 +113,48 @@ int a_star(abstraction_data_t *abst, state_t *state) {
   printf("Agregar a cola de prioridad \n");
   // se agrega el estado a la cola de prioridad
   q.Add(buscar_valor_en_pdb(abst, state), 0, *state);
-  printf("estado agregado a cola de prioridad \n");
-  child = q.Top();
-  print_state( stdout, &child );
+  //printf("estado agregado a cola de prioridad \n");
+  //child = q.Top();
+  //print_state( stdout, child );
   while (!q.Empty()) {
 
-    state_t ns = q.Top();
-    q.Pop();
+    printf("obtener estado de la cola de prioridad \n");
+    state_t n;
+    state_t current_state = q.Top();
 
-    state_t n = q.Top();
-    if (q.CurrentPriority() < buscar_valor_en_pdb(abst,&ns)) {
+    /*
+    init_fwd_iter(&iter, &current_state);  // initialize the child iterator 
+    if ((ruleid = next_ruleid(&iter)) >= 0){
+      apply_fwd_rule(ruleid, &current_state, &n);
+    } else{
+      printf("no hay reglas \n");
+      return 0;
+    }
+    */
+    
+    printf("pop cola de prioridad \n");
+    q.Pop();
+    q.Add(buscar_valor_en_pdb(abst, state), 0, *state);
+    printf("cola vacia (0 true, 1 false): %d \n",q.Empty());
+
+    printf("verificacion if\n");
+    printf("prioridad actual %d \n", q.CurrentPriority());
+    printf("prioridad a comparar %d \n", buscar_valor_en_pdb(abst,&current_state));
+    if (q.CurrentPriority() <= buscar_valor_en_pdb(abst,&current_state)) {
+      printf("dentro del if\n");
       
-      q.Modify(buscar_valor_en_pdb(abst,&ns), q.CurrentPriority(),0,  ns);
-      solucion = buscar_valor_en_pdb(abst,&ns);
+      //q.Modify(buscar_valor_en_pdb(abst,&current_state), q.CurrentPriority(),0,  current_state);
+      q.Modify(q.CurrentPriority(), 0, 0, current_state);
+      solucion = buscar_valor_en_pdb(abst,&current_state);
       nodos_expandidos  += 1;
       if (is_goal(&n)) {
         return profundidad;
       }
 
       // se agregan todos los hijos del estado a la cola de prioridad
-      init_fwd_iter(&iter, &ns);  // initialize the child iterator 
+      init_fwd_iter(&iter, &current_state);  // initialize the child iterator 
       while( (ruleid = next_ruleid(&iter)) >= 0 ) {
-        apply_fwd_rule(ruleid, &ns, &child);
+        apply_fwd_rule(ruleid, &current_state, &child);
         ++childCount;
         
         //printf("child %d. ",childCount);
