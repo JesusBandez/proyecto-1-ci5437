@@ -11,6 +11,7 @@
 
 #define psvn2c_PSVN_API
 
+#define HAVE_FWD_MOVE_PRUNING
 
 
 /* number of variables in a state */
@@ -45,6 +46,8 @@ static const char *fwd_rule_name[ 17 ] = { "REVAT0", "REVAT1", "REVAT2", "REVAT3
 #define cost_of_cheapest_fwd_rule 1
 #define cost_of_costliest_fwd_rule 1
 #define get_fwd_rule_cost( ruleid ) 1
+
+static int fwd_prune_table[ 306 ] = { 17, 34, 51, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 34, 51, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 17, 0, 51, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 17, 34, 0, 68, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 17, 34, 51, 0, 85, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 34, 51, 68, 0, 102, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 0, 51, 68, 85, 0, 119, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 0, 0, 68, 85, 102, 0, 136, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 0, 0, 0, 85, 102, 119, 0, 153, 170, 187, 204, 221, 238, 255, 272, 289, 0, 0, 0, 0, 0, 102, 119, 136, 0, 170, 187, 204, 221, 238, 255, 272, 289, 0, 0, 0, 0, 0, 0, 119, 136, 153, 0, 187, 204, 221, 238, 255, 272, 289, 0, 0, 0, 0, 0, 0, 0, 136, 153, 170, 0, 204, 221, 238, 255, 272, 289, 0, 0, 0, 0, 0, 0, 0, 0, 153, 170, 187, 0, 221, 238, 255, 272, 289, 0, 0, 0, 0, 0, 0, 0, 0, 0, 170, 187, 204, 0, 238, 255, 272, 289, 17, 34, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 238, 255, 272, 0, 17, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 221, 238, 255, 0, 289, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 221, 238, 0, 272, 289, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 187, 204, 221, 0, 255, 272, 289 };
 
 static void fwdrule1( const state_t *state, state_t *child_state )
 {
@@ -528,9 +531,9 @@ static int fwdfn0_r0( const state_t *state, void *next_func )
 /* apply a rule to a state */
 #define apply_fwd_rule( rule, state, result ) fwd_rules[(rule)](state,result)
 /* returns 0 if the rule is pruned, non-zero otherwise */
-#define fwd_rule_valid_for_history( history, rule_used ) 1 
+#define fwd_rule_valid_for_history( history, rule_used ) (fwd_prune_table[(history)+(rule_used)])
 /* generate the next history from the current history and a rule */
-#define next_fwd_history( history, rule_used ) 0 
+#define next_fwd_history( history, rule_used ) (fwd_prune_table[(history)+(rule_used)])
 
 
 /* returns 1 if state is a goal state, 0 otherwise */

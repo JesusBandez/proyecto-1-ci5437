@@ -1,4 +1,7 @@
-for i in 12 14 17
+for j in 0 1
 do
-    timeout 10s stdbuf -oL ./TopSpin${i}Token.out < ../Definitions/GoalState${i}.txt > output_${i}.txt
+    for i in 12 14 17
+    do
+        timeout 3s stdbuf -oL ./prunning${j}TopSpin${i}Token.out < ../Definitions/GoalState${i}.txt > output_${i}Prunning${j}.txt
+    done
 done

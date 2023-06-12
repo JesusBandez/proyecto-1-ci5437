@@ -11,6 +11,7 @@
 
 #define psvn2c_PSVN_API
 
+#define HAVE_FWD_MOVE_PRUNING
 
 
 /* number of variables in a state */
@@ -45,6 +46,8 @@ static const char *fwd_rule_name[ 14 ] = { "REVAT0", "REVAT1", "REVAT2", "REVAT3
 #define cost_of_cheapest_fwd_rule 1
 #define cost_of_costliest_fwd_rule 1
 #define get_fwd_rule_cost( ruleid ) 1
+
+static int fwd_prune_table[ 210 ] = { 14, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196, 0, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196, 14, 0, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196, 14, 28, 0, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196, 14, 28, 42, 0, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196, 0, 28, 42, 56, 0, 84, 98, 112, 126, 140, 154, 168, 182, 196, 0, 0, 42, 56, 70, 0, 98, 112, 126, 140, 154, 168, 182, 196, 0, 0, 0, 56, 70, 84, 0, 112, 126, 140, 154, 168, 182, 196, 0, 0, 0, 0, 70, 84, 98, 0, 126, 140, 154, 168, 182, 196, 0, 0, 0, 0, 0, 84, 98, 112, 0, 140, 154, 168, 182, 196, 0, 0, 0, 0, 0, 0, 98, 112, 126, 0, 154, 168, 182, 196, 14, 28, 42, 0, 0, 0, 0, 0, 0, 0, 154, 168, 182, 0, 14, 28, 0, 0, 0, 0, 0, 0, 0, 140, 154, 168, 0, 196, 14, 0, 0, 0, 0, 0, 0, 0, 126, 140, 154, 0, 182, 196, 0, 0, 0, 0, 0, 0, 0, 112, 126, 140, 0, 168, 182, 196 };
 
 static void fwdrule1( const state_t *state, state_t *child_state )
 {
@@ -405,9 +408,9 @@ static int fwdfn0_r0( const state_t *state, void *next_func )
 /* apply a rule to a state */
 #define apply_fwd_rule( rule, state, result ) fwd_rules[(rule)](state,result)
 /* returns 0 if the rule is pruned, non-zero otherwise */
-#define fwd_rule_valid_for_history( history, rule_used ) 1 
+#define fwd_rule_valid_for_history( history, rule_used ) (fwd_prune_table[(history)+(rule_used)])
 /* generate the next history from the current history and a rule */
-#define next_fwd_history( history, rule_used ) 0 
+#define next_fwd_history( history, rule_used ) (fwd_prune_table[(history)+(rule_used)])
 
 
 /* returns 1 if state is a goal state, 0 otherwise */
