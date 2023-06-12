@@ -1,0 +1,9 @@
+The state you entered is: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+ deep: 1. Expanded nodes: 1. Nodes in Stack: 17
+ deep: 2. Expanded nodes: 18. Nodes in Stack: 187
+ deep: 3. Expanded nodes: 205. Nodes in Stack: 1797
+ deep: 4. Expanded nodes: 2002. Nodes in Stack: 16622
+ deep: 5. Expanded nodes: 18624. Nodes in Stack: 152503
+ deep: 6. Expanded nodes: 171127. Nodes in Stack: 1398011
+ deep: 7. Expanded nodes: 1569138. Nodes in Stack: 12819040
+ deep: 8. Expanded nodes: 14388178. Nodes in Stack: 117566004

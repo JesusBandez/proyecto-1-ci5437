@@ -1,0 +1,25 @@
+The state you entered is: B 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+ deep: 1. Expanded nodes: 1. Nodes in Stack: 2
+ deep: 2. Expanded nodes: 3. Nodes in Stack: 4
+ deep: 3. Expanded nodes: 7. Nodes in Stack: 10
+ deep: 4. Expanded nodes: 17. Nodes in Stack: 24
+ deep: 5. Expanded nodes: 41. Nodes in Stack: 54
+ deep: 6. Expanded nodes: 95. Nodes in Stack: 108
+ deep: 7. Expanded nodes: 203. Nodes in Stack: 218
+ deep: 8. Expanded nodes: 421. Nodes in Stack: 472
+ deep: 9. Expanded nodes: 893. Nodes in Stack: 1030
+ deep: 10. Expanded nodes: 1923. Nodes in Stack: 2204
+ deep: 11. Expanded nodes: 4127. Nodes in Stack: 4666
+ deep: 12. Expanded nodes: 8793. Nodes in Stack: 9880
+ deep: 13. Expanded nodes: 18673. Nodes in Stack: 21046
+ deep: 14. Expanded nodes: 39719. Nodes in Stack: 44972
+ deep: 15. Expanded nodes: 84691. Nodes in Stack: 95930
+ deep: 16. Expanded nodes: 180621. Nodes in Stack: 204216
+ deep: 17. Expanded nodes: 384837. Nodes in Stack: 434694
+ deep: 18. Expanded nodes: 819531. Nodes in Stack: 925980
+ deep: 19. Expanded nodes: 1745511. Nodes in Stack: 1973338
+ deep: 20. Expanded nodes: 3718849. Nodes in Stack: 4204856
+ deep: 21. Expanded nodes: 7923705. Nodes in Stack: 8957558
+ deep: 22. Expanded nodes: 16881263. Nodes in Stack: 19080940
+ deep: 23. Expanded nodes: 35962203. Nodes in Stack: 40648730
+ deep: 24. Expanded nodes: 76610933. Nodes in Stack: 86600984

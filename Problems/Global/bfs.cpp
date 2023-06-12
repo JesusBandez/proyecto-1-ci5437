@@ -67,7 +67,7 @@ int main( int argc, char **argv ){
         
         if (current_deep < node.second){  
             current_deep = node.second;
-            printf(" deep: %d. Expanded nodes: %llu\n", current_deep, expanded_nodes);
+            printf(" deep: %d. Expanded nodes: %llu. Nodes in Stack: %ld\n", current_deep, expanded_nodes, stack.size());
         }
         
         init_fwd_iter( &iter, node.first );

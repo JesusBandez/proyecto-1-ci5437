@@ -1,0 +1,8 @@
+The state you entered is: RED RED RED RED RED RED RED RED GREEN GREEN GREEN GREEN GREEN GREEN GREEN GREEN BLUE BLUE BLUE BLUE BLUE BLUE BLUE BLUE YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE WHITE WHITE WHITE WHITE WHITE WHITE WHITE WHITE 
+ deep: 1. Expanded nodes: 1. Nodes in Stack: 18
+ deep: 2. Expanded nodes: 19. Nodes in Stack: 243
+ deep: 3. Expanded nodes: 262. Nodes in Stack: 3240
+ deep: 4. Expanded nodes: 3502. Nodes in Stack: 43254
+ deep: 5. Expanded nodes: 46756. Nodes in Stack: 577368
+ deep: 6. Expanded nodes: 624124. Nodes in Stack: 7706988
+ deep: 7. Expanded nodes: 8331112. Nodes in Stack: 102876480
