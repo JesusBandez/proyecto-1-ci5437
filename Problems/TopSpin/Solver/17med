@@ -31,3 +31,51 @@ bound: 10, expanded: 2217, generated: 37689
 bound: 11, expanded: 47114, generated: 800938
 bound: 12, expanded: 668983, generated: 11372711
 bound: 13, expanded: 11267006, generated: 191539102
+bound: 14, expanded: 168879047, generated: 2870943799
+bound: 15, expanded: 444673979, generated: 7559457519
+solved. solution cost: 15, expanded nodes: 625538521, generated nodes: 10634154733
+12 10 6 8 15 3 2 11 14 5 13 7 9 0 1 4 16 
+bound: 8, expanded: 2, generated: 34
+bound: 9, expanded: 21, generated: 357
+bound: 10, expanded: 692, generated: 11764
+bound: 11, expanded: 8928, generated: 151776
+bound: 12, expanded: 220018, generated: 3740306
+bound: 13, expanded: 3227380, generated: 54865460
+bound: 14, expanded: 68003291, generated: 1156055947
+bound: 15, expanded: 522904777, generated: 8889381124
+solved. solution cost: 15, expanded nodes: 594365109, generated nodes: 10104206768
+3 13 4 12 14 5 10 11 1 9 6 8 15 0 7 2 16 
+bound: 9, expanded: 4, generated: 68
+bound: 10, expanded: 166, generated: 2822
+bound: 11, expanded: 4351, generated: 73967
+bound: 12, expanded: 92595, generated: 1574115
+bound: 13, expanded: 2159135, generated: 36705295
+bound: 14, expanded: 40693123, generated: 691783091
+bound: 15, expanded: 6195860, generated: 105329533
+solved. solution cost: 15, expanded nodes: 49145234, generated nodes: 835468891
+2 7 8 13 14 4 9 11 3 10 1 6 5 0 12 15 16 
+bound: 8, expanded: 3, generated: 51
+bound: 9, expanded: 43, generated: 731
+bound: 10, expanded: 868, generated: 14756
+bound: 11, expanded: 14087, generated: 239479
+bound: 12, expanded: 313634, generated: 5331778
+bound: 13, expanded: 4821505, generated: 81965585
+bound: 14, expanded: 101455663, generated: 1724746271
+bound: 15, expanded: 7418412, generated: 126112870
+solved. solution cost: 15, expanded nodes: 114024215, generated nodes: 1938411521
+1 9 0 8 2 12 3 11 6 4 15 13 7 10 14 5 16 
+bound: 10, expanded: 128, generated: 2176
+bound: 11, expanded: 1663, generated: 28271
+bound: 12, expanded: 55095, generated: 936615
+bound: 13, expanded: 921420, generated: 15664140
+bound: 14, expanded: 21566285, generated: 366626845
+bound: 15, expanded: 399350515, generated: 6788958755
+
+real	127m6,126s
+user	126m53,270s
+sys	0m1,624s
+
+real	127m6,134s
+user	126m53,276s
+sys	0m1,624s
+

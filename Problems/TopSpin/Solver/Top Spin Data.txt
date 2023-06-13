@@ -1,0 +1,495 @@
+IDA
+
+real	0m0,000s
+user	0m0,000s
+sys	0m0,000s
+>>>>>>>>>> 12Easy
+Enter a start state (empty input line to quit): 8 4 5 10 9 7 0 1 2 3 6 11 
+bound: 5, expanded: 5, generated: 41
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 41
+8 4 3 2 9 5 6 10 1 0 7 11 
+bound: 5, expanded: 5, generated: 33
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 33
+0 1 2 9 4 5 7 8 3 6 10 11 
+bound: 5, expanded: 5, generated: 27
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 27
+8 7 1 0 4 5 6 9 2 3 10 11 
+bound: 5, expanded: 5, generated: 37
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 37
+0 10 9 2 1 6 7 3 4 5 8 11 
+bound: 5, expanded: 5, generated: 42
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 42
+8 3 2 10 9 4 1 7 6 5 0 11 
+bound: 5, expanded: 5, generated: 41
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 41
+7 6 9 8 0 2 10 1 5 4 3 11 
+bound: 5, expanded: 5, generated: 37
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 37
+1 5 4 3 2 0 8 10 9 7 6 11 
+bound: 5, expanded: 5, generated: 41
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 41
+0 1 5 3 8 7 6 4 10 9 2 11 
+bound: 5, expanded: 5, generated: 23
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 23
+0 7 6 2 1 8 5 10 9 3 4 11 
+bound: 5, expanded: 5, generated: 25
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 25
+
+total: depth: 50, expansion: 50, generation: 347, 0.000188 seconds
+
+real	0m0,008s
+user	0m0,001s
+sys	0m0,008s
+
+>>>>>>>>>> 12Medium
+Enter a start state (empty input line to quit): 0 7 3 5 4 9 10 8 6 1 2 11 
+bound: 7, expanded: 19, generated: 228
+bound: 8, expanded: 341, generated: 4092
+bound: 9, expanded: 532, generated: 6333
+solved. solution cost: 9, expanded nodes: 892, generated nodes: 10653
+6 7 4 3 5 2 1 0 9 8 10 11 
+bound: 6, expanded: 13, generated: 156
+bound: 7, expanded: 132, generated: 1549
+solved. solution cost: 7, expanded nodes: 145, generated nodes: 1705
+8 5 7 4 9 1 0 2 3 10 6 11 
+bound: 5, expanded: 2, generated: 24
+bound: 6, expanded: 3, generated: 36
+bound: 7, expanded: 105, generated: 1260
+bound: 8, expanded: 641, generated: 7692
+bound: 9, expanded: 11342, generated: 136104
+bound: 10, expanded: 19317, generated: 231750
+solved. solution cost: 10, expanded nodes: 31410, generated nodes: 376866
+10 1 5 4 3 0 8 9 7 6 2 11 
+bound: 5, expanded: 2, generated: 24
+bound: 6, expanded: 9, generated: 108
+bound: 7, expanded: 177, generated: 2124
+bound: 8, expanded: 1474, generated: 17688
+bound: 9, expanded: 4187, generated: 50196
+solved. solution cost: 9, expanded nodes: 5849, generated nodes: 70140
+10 4 1 0 2 8 6 5 9 7 3 11 
+bound: 6, expanded: 2, generated: 24
+bound: 7, expanded: 43, generated: 516
+bound: 8, expanded: 460, generated: 5520
+bound: 9, expanded: 1006, generated: 11999
+solved. solution cost: 9, expanded nodes: 1511, generated nodes: 18059
+9 0 7 10 4 8 2 6 1 3 5 11 
+bound: 7, expanded: 4, generated: 48
+bound: 8, expanded: 167, generated: 2004
+bound: 9, expanded: 2792, generated: 33504
+bound: 10, expanded: 44427, generated: 533124
+bound: 11, expanded: 8594, generated: 103074
+solved. solution cost: 11, expanded nodes: 55984, generated nodes: 671754
+3 0 6 7 8 1 5 4 10 2 9 11 
+bound: 6, expanded: 5, generated: 60
+bound: 7, expanded: 17, generated: 157
+solved. solution cost: 7, expanded nodes: 22, generated nodes: 217
+7 5 4 8 6 10 3 9 1 0 2 11 
+bound: 7, expanded: 7, generated: 84
+bound: 8, expanded: 11, generated: 96
+solved. solution cost: 8, expanded nodes: 18, generated nodes: 180
+9 6 10 3 1 7 4 0 8 5 2 11 
+bound: 7, expanded: 39, generated: 468
+bound: 8, expanded: 314, generated: 3768
+bound: 9, expanded: 6878, generated: 82536
+bound: 10, expanded: 4061, generated: 48658
+solved. solution cost: 10, expanded nodes: 11292, generated nodes: 135430
+5 8 3 2 6 10 0 9 7 1 4 11 
+bound: 7, expanded: 29, generated: 348
+bound: 8, expanded: 364, generated: 4368
+bound: 9, expanded: 514, generated: 6122
+solved. solution cost: 9, expanded nodes: 907, generated nodes: 10838
+
+total: depth: 89, expansion: 108030, generation: 1295842, 0.124722 seconds
+
+real	0m0,132s
+user	0m0,127s
+sys	0m0,005s
+
+>>>>>>>>>> 12Hard
+Enter a start state (empty input line to quit): 7 5 2 9 4 8 0 10 6 1 3 11 
+bound: 6, expanded: 8, generated: 96
+bound: 7, expanded: 107, generated: 1284
+bound: 8, expanded: 939, generated: 11268
+bound: 9, expanded: 6341, generated: 76043
+solved. solution cost: 9, expanded nodes: 7395, generated nodes: 88691
+6 2 7 4 1 10 0 9 8 3 5 11 
+bound: 6, expanded: 9, generated: 108
+bound: 7, expanded: 68, generated: 816
+bound: 8, expanded: 1013, generated: 12156
+bound: 9, expanded: 10563, generated: 126756
+bound: 10, expanded: 21263, generated: 255092
+solved. solution cost: 10, expanded nodes: 32916, generated nodes: 394928
+6 7 0 3 10 4 8 9 5 1 2 11 
+bound: 6, expanded: 2, generated: 24
+bound: 7, expanded: 33, generated: 396
+bound: 8, expanded: 606, generated: 7272
+bound: 9, expanded: 90, generated: 1006
+solved. solution cost: 9, expanded nodes: 731, generated nodes: 8698
+8 10 6 3 1 2 4 7 0 5 9 11 
+bound: 6, expanded: 3, generated: 36
+bound: 7, expanded: 23, generated: 276
+bound: 8, expanded: 453, generated: 5436
+bound: 9, expanded: 4674, generated: 56088
+bound: 10, expanded: 71206, generated: 854472
+bound: 11, expanded: 24791, generated: 297411
+solved. solution cost: 11, expanded nodes: 101150, generated nodes: 1213719
+9 7 2 1 10 6 8 0 4 5 3 11 
+bound: 6, expanded: 2, generated: 24
+bound: 7, expanded: 18, generated: 216
+bound: 8, expanded: 386, generated: 4632
+bound: 9, expanded: 359, generated: 4252
+solved. solution cost: 9, expanded nodes: 765, generated nodes: 9124
+3 10 4 2 7 5 6 9 0 1 8 11 
+bound: 6, expanded: 3, generated: 36
+bound: 7, expanded: 29, generated: 348
+bound: 8, expanded: 485, generated: 5820
+bound: 9, expanded: 717, generated: 8568
+solved. solution cost: 9, expanded nodes: 1234, generated nodes: 14772
+10 0 5 4 1 9 8 7 3 6 2 11 
+bound: 5, expanded: 2, generated: 24
+bound: 6, expanded: 18, generated: 216
+bound: 7, expanded: 97, generated: 1111
+solved. solution cost: 7, expanded nodes: 117, generated nodes: 1351
+2 3 7 10 6 0 5 9 1 8 4 11 
+bound: 6, expanded: 3, generated: 36
+bound: 7, expanded: 35, generated: 420
+bound: 8, expanded: 247, generated: 2930
+solved. solution cost: 8, expanded nodes: 285, generated nodes: 3386
+1 5 6 4 10 0 9 8 7 2 3 11 
+bound: 6, expanded: 1, generated: 12
+bound: 7, expanded: 22, generated: 264
+bound: 8, expanded: 404, generated: 4848
+bound: 9, expanded: 1424, generated: 17061
+solved. solution cost: 9, expanded nodes: 1851, generated nodes: 22185
+9 7 0 10 4 6 5 8 2 3 1 11 
+bound: 7, expanded: 1, generated: 12
+bound: 8, expanded: 88, generated: 1056
+bound: 9, expanded: 1732, generated: 20784
+bound: 10, expanded: 598, generated: 7103
+solved. solution cost: 10, expanded nodes: 2419, generated nodes: 28955
+
+total: depth: 91, expansion: 148863, generation: 1785809, 0.125298 seconds
+
+real	0m0,127s
+user	0m0,127s
+sys	0m0,000s
+
+>>>>>>>>>> 14Easy
+Enter a start state (empty input line to quit): 12 7 1 2 3 11 10 5 4 8 9 6 0 13 
+bound: 5, expanded: 5, generated: 43
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 43
+8 7 6 9 12 11 0 10 1 2 3 4 5 13 
+bound: 5, expanded: 5, generated: 50
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 50
+10 9 2 12 4 3 1 11 5 6 7 8 0 13 
+bound: 5, expanded: 5, generated: 47
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 47
+6 7 3 8 4 5 0 10 9 12 11 1 2 13 
+bound: 5, expanded: 5, generated: 64
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 64
+0 1 5 10 9 2 6 4 3 8 7 11 12 13 
+bound: 5, expanded: 5, generated: 25
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 25
+0 7 1 11 12 8 5 4 3 2 6 10 9 13 
+bound: 5, expanded: 5, generated: 46
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 46
+5 6 2 1 4 8 9 10 11 12 0 7 3 13 
+bound: 5, expanded: 5, generated: 20
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 20
+6 11 0 1 2 3 4 7 8 12 5 10 9 13 
+bound: 5, expanded: 5, generated: 54
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 54
+9 8 11 1 2 3 10 6 5 4 0 7 12 13 
+bound: 5, expanded: 5, generated: 44
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 44
+3 4 1 0 5 6 7 10 11 12 8 9 2 13 
+bound: 5, expanded: 5, generated: 54
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 54
+
+total: depth: 50, expansion: 50, generation: 447, 0.000124 seconds
+
+real	0m0,028s
+user	0m0,000s
+sys	0m0,027s
+
+>>>>>>>>>> 14Medium
+Enter a start state (empty input line to quit): 7 5 8 0 12 4 10 11 6 2 1 3 9 13 
+bound: 8, expanded: 3, generated: 42
+bound: 9, expanded: 59, generated: 826
+bound: 10, expanded: 1108, generated: 15512
+bound: 11, expanded: 20755, generated: 290570
+bound: 12, expanded: 351225, generated: 4917150
+bound: 13, expanded: 307895, generated: 4310446
+solved. solution cost: 13, expanded nodes: 681045, generated nodes: 9534546
+10 5 9 3 2 6 1 8 11 7 4 12 0 13 
+bound: 7, expanded: 1, generated: 14
+bound: 8, expanded: 18, generated: 252
+bound: 9, expanded: 319, generated: 4466
+bound: 10, expanded: 5724, generated: 80136
+bound: 11, expanded: 79377, generated: 1111278
+bound: 12, expanded: 433340, generated: 6066696
+solved. solution cost: 12, expanded nodes: 518779, generated nodes: 7262842
+3 7 12 5 1 10 4 9 11 2 8 0 6 13 
+bound: 8, expanded: 4, generated: 56
+bound: 9, expanded: 184, generated: 2576
+bound: 10, expanded: 1884, generated: 26376
+bound: 11, expanded: 42793, generated: 599102
+bound: 12, expanded: 536124, generated: 7505736
+bound: 13, expanded: 680205, generated: 9522773
+solved. solution cost: 13, expanded nodes: 1261194, generated nodes: 17656619
+2 12 5 4 6 10 0 8 3 1 11 7 9 13 
+bound: 9, expanded: 78, generated: 1092
+bound: 10, expanded: 1402, generated: 19628
+bound: 11, expanded: 24036, generated: 336504
+bound: 12, expanded: 18639, generated: 260879
+solved. solution cost: 12, expanded nodes: 44155, generated nodes: 618103
+12 9 4 7 3 11 8 5 1 6 10 2 0 13 
+bound: 7, expanded: 6, generated: 84
+bound: 8, expanded: 21, generated: 294
+bound: 9, expanded: 1048, generated: 14672
+bound: 10, expanded: 6489, generated: 90846
+bound: 11, expanded: 172333, generated: 2412662
+bound: 12, expanded: 293559, generated: 4109724
+solved. solution cost: 12, expanded nodes: 473456, generated nodes: 6628282
+9 4 11 12 5 8 6 10 0 2 3 1 7 13 
+bound: 8, expanded: 9, generated: 126
+bound: 9, expanded: 282, generated: 3948
+bound: 10, expanded: 5246, generated: 73444
+bound: 11, expanded: 38110, generated: 533481
+solved. solution cost: 11, expanded nodes: 43647, generated nodes: 610999
+3 9 11 8 0 7 12 5 1 2 4 10 6 13 
+bound: 7, expanded: 1, generated: 14
+bound: 8, expanded: 9, generated: 126
+bound: 9, expanded: 238, generated: 3332
+bound: 10, expanded: 2515, generated: 35210
+bound: 11, expanded: 53766, generated: 752724
+bound: 12, expanded: 557421, generated: 7803794
+solved. solution cost: 12, expanded nodes: 613950, generated nodes: 8595200
+11 3 6 10 12 8 2 7 1 9 0 5 4 13 
+bound: 8, expanded: 3, generated: 42
+bound: 9, expanded: 46, generated: 644
+bound: 10, expanded: 1019, generated: 14266
+bound: 11, expanded: 18845, generated: 263830
+bound: 12, expanded: 32087, generated: 449155
+solved. solution cost: 12, expanded nodes: 52000, generated nodes: 727937
+9 5 7 6 2 12 1 3 11 4 10 8 0 13 
+bound: 8, expanded: 5, generated: 70
+bound: 9, expanded: 69, generated: 966
+bound: 10, expanded: 1535, generated: 21490
+bound: 11, expanded: 23705, generated: 331870
+bound: 12, expanded: 3970, generated: 55495
+solved. solution cost: 12, expanded nodes: 29284, generated nodes: 409891
+3 9 2 6 0 7 10 4 5 12 1 8 11 13 
+bound: 8, expanded: 57, generated: 798
+bound: 9, expanded: 393, generated: 5502
+bound: 10, expanded: 10873, generated: 152222
+bound: 11, expanded: 97343, generated: 1362802
+bound: 12, expanded: 1922136, generated: 26909904
+bound: 13, expanded: 264694, generated: 3705594
+solved. solution cost: 13, expanded nodes: 2295496, generated nodes: 32136822
+
+total: depth: 122, expansion: 6013006, generation: 84181241, 9.480821 seconds
+
+real	0m9,508s
+user	0m9,483s
+sys	0m0,024s
+
+>>>>>>>>>> 14Hard
+Enter a start state (empty input line to quit): 2 1 11 8 12 4 3 7 6 5 0 10 9 13 
+bound: 7, expanded: 7, generated: 98
+bound: 8, expanded: 56, generated: 784
+bound: 9, expanded: 1211, generated: 16954
+bound: 10, expanded: 273, generated: 3752
+solved. solution cost: 10, expanded nodes: 1547, generated nodes: 21588
+6 10 12 5 4 8 7 0 9 3 1 11 2 13 
+bound: 8, expanded: 3, generated: 42
+bound: 9, expanded: 137, generated: 1918
+bound: 10, expanded: 2314, generated: 32396
+bound: 11, expanded: 41200, generated: 576800
+bound: 12, expanded: 129966, generated: 1819466
+solved. solution cost: 12, expanded nodes: 173620, generated nodes: 2430622
+8 11 0 2 4 1 12 6 9 3 5 7 10 13 
+bound: 8, expanded: 2, generated: 28
+bound: 9, expanded: 88, generated: 1232
+bound: 10, expanded: 1790, generated: 25060
+bound: 11, expanded: 34749, generated: 486486
+bound: 12, expanded: 349364, generated: 4891017
+solved. solution cost: 12, expanded nodes: 385993, generated nodes: 5403823
+3 6 11 8 5 12 7 0 9 1 4 2 10 13 
+bound: 7, expanded: 3, generated: 42
+bound: 8, expanded: 32, generated: 448
+bound: 9, expanded: 534, generated: 7476
+bound: 10, expanded: 6617, generated: 92638
+bound: 11, expanded: 105284, generated: 1473976
+bound: 12, expanded: 159175, generated: 2228357
+solved. solution cost: 12, expanded nodes: 271645, generated nodes: 3802937
+5 7 12 6 0 3 9 8 1 2 10 4 11 13 
+bound: 8, expanded: 13, generated: 182
+bound: 9, expanded: 141, generated: 1974
+bound: 10, expanded: 3271, generated: 45794
+bound: 11, expanded: 3418, generated: 47768
+solved. solution cost: 11, expanded nodes: 6843, generated nodes: 95718
+7 4 12 11 0 3 8 9 2 6 1 10 5 13 
+bound: 7, expanded: 2, generated: 28
+bound: 8, expanded: 16, generated: 224
+bound: 9, expanded: 448, generated: 6272
+bound: 10, expanded: 5487, generated: 76818
+bound: 11, expanded: 12175, generated: 170373
+solved. solution cost: 11, expanded nodes: 18128, generated nodes: 253715
+3 6 12 2 8 1 7 5 9 0 4 11 10 13 
+bound: 7, expanded: 4, generated: 56
+bound: 8, expanded: 37, generated: 518
+bound: 9, expanded: 649, generated: 9086
+bound: 10, expanded: 3116, generated: 43538
+solved. solution cost: 10, expanded nodes: 3806, generated nodes: 53198
+2 1 7 6 4 0 11 5 8 9 12 10 3 13 
+bound: 7, expanded: 1, generated: 14
+bound: 8, expanded: 26, generated: 364
+bound: 9, expanded: 261, generated: 3654
+bound: 10, expanded: 5351, generated: 74914
+bound: 11, expanded: 2429, generated: 33922
+solved. solution cost: 11, expanded nodes: 8068, generated nodes: 112868
+10 11 3 2 5 9 8 7 12 6 0 4 1 13 
+bound: 7, expanded: 5, generated: 70
+bound: 8, expanded: 23, generated: 322
+bound: 9, expanded: 539, generated: 7480
+solved. solution cost: 9, expanded nodes: 567, generated nodes: 7872
+0 11 9 12 8 7 4 1 2 5 3 10 6 13 
+bound: 8, expanded: 21, generated: 294
+bound: 9, expanded: 674, generated: 9436
+bound: 10, expanded: 7932, generated: 111048
+bound: 11, expanded: 25379, generated: 355238
+solved. solution cost: 11, expanded nodes: 34006, generated nodes: 476016
+
+total: depth: 109, expansion: 904223, generation: 12658357, 1.487779 seconds
+
+real	0m1,516s
+user	0m1,491s
+sys	0m0,024s
+
+>>>>>>>>>> 17Easy
+Enter a start state (empty input line to quit): 4 5 6 7 8 9 10 11 12 15 3 0 13 14 2 1 16 
+bound: 4, expanded: 2, generated: 34
+bound: 5, expanded: 6, generated: 88
+solved. solution cost: 5, expanded nodes: 8, generated nodes: 122
+12 11 10 0 13 14 15 1 2 3 4 7 8 9 5 6 16 
+bound: 4, expanded: 19, generated: 323
+bound: 5, expanded: 5, generated: 63
+solved. solution cost: 5, expanded nodes: 24, generated nodes: 386
+0 1 4 5 9 8 11 10 6 14 13 12 7 15 2 3 16 
+bound: 5, expanded: 5, generated: 52
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 52
+15 3 2 1 14 4 5 10 11 7 6 13 12 8 9 0 16 
+bound: 5, expanded: 5, generated: 48
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 48
+9 8 14 15 13 12 10 0 1 2 3 4 5 6 7 11 16 
+bound: 5, expanded: 5, generated: 64
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 64
+15 14 1 0 2 3 4 5 10 11 7 6 9 8 12 13 16 
+bound: 5, expanded: 5, generated: 53
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 53
+15 14 1 0 2 3 4 5 6 7 8 9 10 11 12 13 16 
+bound: 3, expanded: 3, generated: 33
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 33
+0 3 4 5 6 7 8 9 2 13 14 10 1 11 12 15 16 
+bound: 5, expanded: 5, generated: 61
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 61
+0 1 2 3 8 6 5 4 13 14 7 9 10 12 11 15 16 
+bound: 5, expanded: 5, generated: 44
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 44
+3 7 6 5 10 9 8 4 14 13 12 11 0 1 2 15 16 
+bound: 5, expanded: 5, generated: 43
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 43
+
+total: depth: 48, expansion: 70, generation: 906, 0.000301 seconds
+
+real	0m0,705s
+user	0m0,000s
+sys	0m0,403s
+
+>>>>>>>>>> 17Medium
+Enter a start state (empty input line to quit): 9 0 1 11 4 10 7 5 14 2 3 13 8 6 15 12 16 
+bound: 9, expanded: 9, generated: 153
+bound: 10, expanded: 77, generated: 1309
+bound: 11, expanded: 3269, generated: 55573
+bound: 12, expanded: 63058, generated: 1071986
+bound: 13, expanded: 1423894, generated: 24206198
+bound: 14, expanded: 28803538, generated: 489660146
+bound: 15, expanded: 196545213, generated: 3341268521
+solved. solution cost: 15, expanded nodes: 226839058, generated nodes: 3856263886
+7 1 14 4 2 5 15 12 9 3 8 13 10 11 6 0 16 
+bound: 9, expanded: 57, generated: 969
+bound: 10, expanded: 317, generated: 5389
+bound: 11, expanded: 14447, generated: 245599
+bound: 12, expanded: 165754, generated: 2817818
+bound: 13, expanded: 4251321, generated: 72272457
+bound: 14, expanded: 63024219, generated: 1071411723
+bound: 15, expanded: 200609861, generated: 3410367508
+solved. solution cost: 15, expanded nodes: 268065976, generated nodes: 4557121463
+7 10 4 14 9 3 1 5 0 11 13 2 8 6 12 15 16 
+bound: 10, expanded: 46, generated: 782
+bound: 11, expanded: 1541, generated: 26197
+bound: 12, expanded: 35698, generated: 606866
+bound: 13, expanded: 870237, generated: 14794029
+bound: 14, expanded: 18147689, generated: 308510713
+bound: 15, expanded: 328303445, generated: 5581158432
+solved. solution cost: 15, expanded nodes: 347358656, generated nodes: 5905097019
+4 13 2 10 0 14 11 6 3 8 15 12 7 1 5 9 16 
+bound: 9, expanded: 175, generated: 2975
+bound: 10, expanded: 2217, generated: 37689
+bound: 11, expanded: 47114, generated: 800938
+bound: 12, expanded: 668983, generated: 11372711
+bound: 13, expanded: 11267006, generated: 191539102
+bound: 14, expanded: 168879047, generated: 2870943799
+bound: 15, expanded: 444673979, generated: 7559457519
+solved. solution cost: 15, expanded nodes: 625538521, generated nodes: 10634154733
+12 10 6 8 15 3 2 11 14 5 13 7 9 0 1 4 16 
+bound: 8, expanded: 2, generated: 34
+bound: 9, expanded: 21, generated: 357
+bound: 10, expanded: 692, generated: 11764
+bound: 11, expanded: 8928, generated: 151776
+bound: 12, expanded: 220018, generated: 3740306
+bound: 13, expanded: 3227380, generated: 54865460
+bound: 14, expanded: 68003291, generated: 1156055947
+bound: 15, expanded: 522904777, generated: 8889381124
+solved. solution cost: 15, expanded nodes: 594365109, generated nodes: 10104206768
+3 13 4 12 14 5 10 11 1 9 6 8 15 0 7 2 16 
+bound: 9, expanded: 4, generated: 68
+bound: 10, expanded: 166, generated: 2822
+bound: 11, expanded: 4351, generated: 73967
+bound: 12, expanded: 92595, generated: 1574115
+bound: 13, expanded: 2159135, generated: 36705295
+bound: 14, expanded: 40693123, generated: 691783091
+bound: 15, expanded: 6195860, generated: 105329533
+solved. solution cost: 15, expanded nodes: 49145234, generated nodes: 835468891
+2 7 8 13 14 4 9 11 3 10 1 6 5 0 12 15 16 
+bound: 8, expanded: 3, generated: 51
+bound: 9, expanded: 43, generated: 731
+bound: 10, expanded: 868, generated: 14756
+bound: 11, expanded: 14087, generated: 239479
+bound: 12, expanded: 313634, generated: 5331778
+bound: 13, expanded: 4821505, generated: 81965585
+bound: 14, expanded: 101455663, generated: 1724746271
+bound: 15, expanded: 7418412, generated: 126112870
+solved. solution cost: 15, expanded nodes: 114024215, generated nodes: 1938411521
+1 9 0 8 2 12 3 11 6 4 15 13 7 10 14 5 16 
+bound: 10, expanded: 128, generated: 2176
+bound: 11, expanded: 1663, generated: 28271
+bound: 12, expanded: 55095, generated: 936615
+bound: 13, expanded: 921420, generated: 15664140
+bound: 14, expanded: 21566285, generated: 366626845
+bound: 15, expanded: 399350515, generated: 6788958755
+
+>>>>>>>>>> 17Hard
+Enter a start state (empty input line to quit): 6 3 8 14 10 7 0 13 12 15 1 5 11 4 9 2 16 
+bound: 8, expanded: 11, generated: 187
+bound: 9, expanded: 188, generated: 3196
+bound: 10, expanded: 3768, generated: 64056
+bound: 11, expanded: 63441, generated: 1078497
+bound: 12, expanded: 1077870, generated: 18323790
+bound: 13, expanded: 17476511, generated: 297100687
+bound: 14, expanded: 278868496, generated: 4740764432
+bound: 15, expanded: 35427454, generated: 602266605
+solved. solution cost: 15, expanded nodes: 332917739, generated nodes: 5659601450
+
+Detenido a los 10 min 

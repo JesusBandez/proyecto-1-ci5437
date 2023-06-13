@@ -1,0 +1,255 @@
+IDA
+>>>>>>>>>> 12Easy
+Enter a start state (empty input line to quit): 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 11
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 11
+0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+1 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 6
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 6
+0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 11
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 11
+0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 7
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 7
+0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+
+total: depth: 21, expansion: 21, generation: 53, 0.000022 seconds
+
+real	0m0,137s
+user	0m0,004s
+sys	0m0,133s
+
+>>>>>>>>>> 12Medium
+Enter a start state (empty input line to quit): 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 22, expanded: 22, generated: 103
+solved. solution cost: 22, expanded nodes: 22, generated nodes: 103
+0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 
+bound: 38, expanded: 38, generated: 178
+solved. solution cost: 38, expanded nodes: 38, generated nodes: 178
+1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 31, expanded: 31, generated: 143
+solved. solution cost: 31, expanded nodes: 31, generated nodes: 143
+0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 29, expanded: 29, generated: 127
+solved. solution cost: 29, expanded nodes: 29, generated nodes: 127
+1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 29, expanded: 29, generated: 135
+solved. solution cost: 29, expanded nodes: 29, generated nodes: 135
+1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 
+bound: 40, expanded: 40, generated: 185
+solved. solution cost: 40, expanded nodes: 40, generated nodes: 185
+0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 19, expanded: 19, generated: 84
+solved. solution cost: 19, expanded nodes: 19, generated nodes: 84
+0 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 
+bound: 37, expanded: 37, generated: 174
+solved. solution cost: 37, expanded nodes: 37, generated nodes: 174
+0 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 25, expanded: 25, generated: 125
+solved. solution cost: 25, expanded nodes: 25, generated nodes: 125
+0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 15, expanded: 15, generated: 72
+solved. solution cost: 15, expanded nodes: 15, generated nodes: 72
+
+total: depth: 285, expansion: 285, generation: 1326, 0.000337 seconds
+
+real	0m0,139s
+user	0m0,000s
+sys	0m0,136s
+
+
+>>>>>>>>>> 12Hard
+Enter a start state (empty input line to quit): 0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 
+bound: 43, expanded: 18833, generated: 111702
+bound: 44, expanded: 906349, generated: 5366946
+bound: 45, expanded: 27125579, generated: 160410710
+Detenido luego de 10 min
+
+>>>>>>>>>> 14Easy
+Enter a start state (empty input line to quit): 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 4, expanded: 4, generated: 14
+solved. solution cost: 4, expanded nodes: 4, generated nodes: 14
+1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 5, expanded: 5, generated: 18
+solved. solution cost: 5, expanded nodes: 5, generated nodes: 18
+0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 7
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 7
+0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+0 0 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 4, expanded: 4, generated: 13
+solved. solution cost: 4, expanded nodes: 4, generated nodes: 13
+0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 7
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 7
+
+total: depth: 27, expansion: 27, generation: 76, 0.000045 seconds
+
+real	0m0,984s
+user	0m0,004s
+sys	0m0,229s
+
+>>>>>>>>>> 14Medium
+Enter a start state (empty input line to quit): 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 21, expanded: 21, generated: 96
+solved. solution cost: 21, expanded nodes: 21, generated nodes: 96
+0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 25, expanded: 25, generated: 118
+solved. solution cost: 25, expanded nodes: 25, generated nodes: 118
+0 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 23, expanded: 23, generated: 106
+solved. solution cost: 23, expanded nodes: 23, generated nodes: 106
+0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 27, expanded: 27, generated: 124
+solved. solution cost: 27, expanded nodes: 27, generated nodes: 124
+0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 31, expanded: 31, generated: 145
+solved. solution cost: 31, expanded nodes: 31, generated nodes: 145
+0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 25, expanded: 25, generated: 112
+solved. solution cost: 25, expanded nodes: 25, generated nodes: 112
+0 0 0 1 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 35, expanded: 35, generated: 166
+solved. solution cost: 35, expanded nodes: 35, generated nodes: 166
+1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 23, expanded: 23, generated: 104
+solved. solution cost: 23, expanded nodes: 23, generated nodes: 104
+1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 17, expanded: 17, generated: 77
+solved. solution cost: 17, expanded nodes: 17, generated nodes: 77
+0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 27, expanded: 27, generated: 122
+solved. solution cost: 27, expanded nodes: 27, generated nodes: 122
+
+total: depth: 254, expansion: 254, generation: 1170, 0.000345 seconds
+
+real	0m0,175s
+user	0m0,004s
+sys	0m0,171s
+
+>>>>>>>>>> 14Hard
+Enter a start state (empty input line to quit): 0 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1 
+bound: 52, expanded: 67806, generated: 406836
+bound: 53, expanded: 3357187, generated: 20143122
+bound: 54, expanded: 104939582, generated: 629637492
+Detenido a los 10 min
+
+>>>>>>>>>> 18Easy
+Enter a start state (empty input line to quit): 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 7
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 7
+0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 4, expanded: 4, generated: 16
+solved. solution cost: 4, expanded nodes: 4, generated nodes: 16
+1 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 6
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 6
+0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 6
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 6
+1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 6
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 6
+0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 2, expanded: 2, generated: 5
+solved. solution cost: 2, expanded nodes: 2, generated nodes: 5
+0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 1, expanded: 1, generated: 1
+solved. solution cost: 1, expanded nodes: 1, generated nodes: 1
+1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 3, expanded: 3, generated: 7
+solved. solution cost: 3, expanded nodes: 3, generated nodes: 7
+
+total: depth: 25, expansion: 25, generation: 60, 0.000053 seconds
+
+real	0m1,281s
+user	0m0,000s
+sys	0m0,294s
+
+>>>>>>>>>> 18Medium
+Enter a start state (empty input line to quit): 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 21, expanded: 21, generated: 97
+solved. solution cost: 21, expanded nodes: 21, generated nodes: 97
+0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 20, expanded: 20, generated: 91
+solved. solution cost: 20, expanded nodes: 20, generated nodes: 91
+0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 18, expanded: 18, generated: 86
+solved. solution cost: 18, expanded nodes: 18, generated nodes: 86
+0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 34, expanded: 34, generated: 158
+solved. solution cost: 34, expanded nodes: 34, generated nodes: 158
+0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 28, expanded: 28, generated: 130
+solved. solution cost: 28, expanded nodes: 28, generated nodes: 130
+1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 27, expanded: 27, generated: 119
+solved. solution cost: 27, expanded nodes: 27, generated nodes: 119
+0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 33, expanded: 33, generated: 154
+solved. solution cost: 33, expanded nodes: 33, generated nodes: 154
+0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 36, expanded: 36, generated: 170
+solved. solution cost: 36, expanded nodes: 36, generated nodes: 170
+0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 21, expanded: 21, generated: 94
+solved. solution cost: 21, expanded nodes: 21, generated nodes: 94
+1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 
+bound: 29, expanded: 29, generated: 129
+solved. solution cost: 29, expanded nodes: 29, generated nodes: 129
+
+total: depth: 267, expansion: 267, generation: 1228, 0.000433 seconds
+
+real	0m0,221s
+user	0m0,000s
+sys	0m0,221s
+
+>>>>>>>>>> 18Hard
+Enter a start state (empty input line to quit): 1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 
+bound: 52, expanded: 1621, generated: 9726
+bound: 53, expanded: 79428, generated: 476568
+bound: 54, expanded: 2180124, generated: 13080744
+bound: 55, expanded: 45472436, generated: 272834616
+
+
+
+
+
