@@ -8,20 +8,15 @@
 #include <tuple>
 
 using namespace std;
-
-/* GLOBAL VARIABLES */
-long nodos_expandidos ;   
-long nodos_generados ;
-long profundidad = INT64_MAX;
-
+// struct que guarda la informacion de la abstraccion y la PDB
 typedef struct {
     abstraction_t* abst;
     state_map_t* map;
 } abstraction_data_t;
 
 abstraction_data_t* abstraccion;
-char* abs_filename;
-char* map_filename;
+long nodos_expandidos;
+long nodos_generados;
 
 abstraction_data_t* leer_abstraccion(char* abs_filename, char* map_filename)
 {
@@ -86,84 +81,56 @@ int buscar_valor_en_pdb(abstraction_data_t* abst, state_t* state)
     return *h;
 }
 
-int heuristica(){
-  return 0;
-}
-
-struct CompareState {
-    bool operator()(state_t s1, state_t s2) {
-        return buscar_valor_en_pdb(abstraccion,&s1) < buscar_valor_en_pdb(abstraccion,&s2);
+struct CompareTuple {
+    bool operator()(const pair<state_t*, int>& t1, const pair<state_t*, int>& t2) {
+        return t1.second < t2.second;
     }
 };
 
 // best_first_search con heuristica admisible (A*)
 int a_star(abstraction_data_t *abst, state_t state) {
 
-    state_t child;
-    ruleid_iterator_t iter; // ruleid_terator_t is the type defined by the PSVN API successor/predecessor iterators.
-    int ruleid, childCount, solucion;
+  if (is_goal(&state)) { return 0; }
+  ruleid_iterator_t iter; 
+  int ruleid, current_depth;
 
-    nodos_expandidos = 0;
-    nodos_generados = 0;
+  nodos_expandidos = 0;
+  nodos_generados = 0;
 
-    // estado objetivo
-    printf("verificacion estado objetivo: \n");
-    if (is_goal(&state)) { return 0; }
+  priority_queue<pair<state_t*, int>, vector<pair<state_t*, int>>, CompareTuple> pq;
 
-    //int PriorityQueue<T>::Add(int f, int g, const T& data)
-    // f valor heuristica
-    // g costo del camino o distancia
-    // data estado
+  pq.push(make_pair(&state,0));
+  current_depth = 0;
+  while (!pq.empty()){
 
-    //printf("creacion cola \n");
-    priority_queue <state_t, vector<state_t>, CompareState> pq;
-    pq.push(state);
-    //printf("elemento agregado a la cola  \n");
+    
+    pair<state_t*, int> node =  pq.top();
+    pq.pop();
+    
+    state_t* ns = node.first;
 
-    //print_state( stdout, &pq.top() );
-
-    //printf("\n valor pdb del estado : %d \n", buscar_valor_en_pdb(abst,&pq.top()));
-
-    //printf("\n");
-
-    while (!pq.empty()){
-
-      state_t n;
-      state_t current_state = pq.top();
-      pq.pop();
+    if (node.second < buscar_valor_en_pdb(abst, ns)) {
       
-      solucion = buscar_valor_en_pdb(abst,&current_state);
+      current_depth = node.second;
 
-      printf("verificacion if\n");
-      //printf("prioridad actual %d \n", q.CurrentPriority());
-      //printf("prioridad a comparar %d \n", buscar_valor_en_pdb(abst,&current_state));
-      if (solucion >= buscar_valor_en_pdb(abst,&current_state)) {
-        printf("dentro del if\n");
+      if (is_goal(ns)) {return current_depth;}
+
+      init_fwd_iter(&iter, ns);
+      while( (ruleid = next_ruleid(&iter)) >= 0 ) {
+        state_t* successor = (state_t*) malloc(sizeof(state_t));
+        apply_fwd_rule(ruleid, ns, successor);
+          
+        print_state(stdout, successor);
+        printf("\n");
+        pq.push(make_pair(successor,node.second+buscar_valor_en_pdb(abst, successor)));
         
-        nodos_expandidos  += 1;
-        if (is_goal(&current_state)) {return solucion;}
-
-        // se agregan todos los hijos del estado a la cola de prioridad
-        init_fwd_iter(&iter, &current_state);  // initialize the child iterator 
-        while( (ruleid = next_ruleid(&iter)) >= 0 ) {
-            apply_fwd_rule(ruleid, &current_state, &child);
-            ++childCount;
-            
-            //printf("child %d. ",childCount);
-            
-            print_state(stdout, &child);
-            solucion = buscar_valor_en_pdb(abst,&child);
-            printf("valor de solucion actual: %d \n",solucion);
-            if (is_goal(&child)) {return solucion;}
-            pq.push(child);
-            printf("cantidad de estados en cola de prioridad: %ld \n", pq.size());
-            //printf("  %s (cost %d), goal=%d\n", get_fwd_rule_label(ruleid), get_fwd_rule_cost(ruleid), is_goal(&child));
-            nodos_generados += 1;
-        }
+        printf("cantidad de estados en cola de prioridad: %ld \n", pq.size());
+        nodos_generados += 1;
       }
-      profundidad = solucion;
+      nodos_expandidos += 1;
+    }           
   }
-  return profundidad;
+  return current_depth;
 }
 
 int main(int argc, char **argv)
@@ -172,40 +139,39 @@ int main(int argc, char **argv)
   int cont, depth, total_depth;
   char line[ 4096 ];
 
-  printf("argumentos: %s , %s \n", argv[1], argv[2]);
-
   if( argc != 3 ) {
     printf("Deben haber 2 argumentos: la ruta al archivo.abst y la ruta al archivo .pdb (state_map).\n");
     return EXIT_FAILURE;
   } else {
     // leer los datos de la abstraccion y la PDB
-    abs_filename = argv[1];
-    map_filename = argv[2];
-    abstraccion = leer_abstraccion( abs_filename, map_filename );
+    abstraccion = leer_abstraccion( argv[1], argv[2] );
     if (abstraccion == NULL) {
       printf("No se pudo leer la abstraccion y la PDB.\n");
       return EXIT_FAILURE;
     }
   }
 
-  printf("Introduzca el estado inicial del problema o enter para salir: ");
-  for( cont = 0; fgets( line, 4096, stdin ) != NULL && read_state( line, &state ) > 0; ++cont ) {
+  printf("\nIntroduzca el estado inicial del problema o enter para salir: ");
+  if (fgets( line, 4096, stdin ) != NULL && read_state( line, &state ) > 0) {
       
-    printf( "problem %d: ", cont + 1 );
+    printf("\nestado inicial: ");
     print_state( stdout, &state );
-    printf( "\n" );
+    printf( "\n\n" );
     
-    printf("entrado A* \n");
+    if (is_goal(&state)) {
+      printf("El estado inicial es un estado objetivo.\n");
+      return 0;
+    }
+    
     depth = a_star( abstraccion, state );
 
-    if ( profundidad == INT64_MAX ) {
-      printf( "no se encontro solucion. nodos expandidos: %ld , nodos generados: %ld \n",
+    if ( depth == 0 ) {
+      printf("\nno se encontro solucion. nodos expandidos: %ld , nodos generados: %ld \n",
             nodos_expandidos, nodos_generados );
     } else {
-      printf( "se encontro una solucion. nodos expandidos: %ld , nodos generados: %ld , profundidad: %d \n",
+      printf("\nse encontro una solucion. nodos expandidos: %ld , nodos generados: %ld , profundidad: %d \n",
             nodos_expandidos, nodos_generados , depth );
     } 
-    printf("Introduzca el estado inicial del problema o enter para salir: ");
   }
 
   destruir_abstraccion(abstraccion);
