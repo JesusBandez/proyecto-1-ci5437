@@ -74,10 +74,8 @@ int buscar_valor_en_pdb(abstraction_data_t* abst, state_t* state)
 {
     //printf("buscando valor en pdb \n");
     state_t abst_state;
-    printf("creando estado abstracto en buscar valor en pdb\n");
     abstract_state( abst->abst, state, &abst_state );
     int *h;
-    printf("buscando valor en mapa de estados \n");
     h = state_map_get( abst->map, &abst_state );
     //printf("valor encontrado en mapa de estados \n");
     //printf("valor encontrado: %d \n", *h);
@@ -130,44 +128,40 @@ int a_star(abstraction_data_t *abst, state_t state) {
 
     while (!pq.empty()){
 
-        printf("obtener estado de la cola de prioridad \n");
-        state_t n;
-        state_t current_state = pq.top();
-        pq.pop();
+      state_t n;
+      state_t current_state = pq.top();
+      pq.pop();
+      
+      solucion = buscar_valor_en_pdb(abst,&current_state);
+
+      printf("verificacion if\n");
+      //printf("prioridad actual %d \n", q.CurrentPriority());
+      //printf("prioridad a comparar %d \n", buscar_valor_en_pdb(abst,&current_state));
+      if (solucion >= buscar_valor_en_pdb(abst,&current_state)) {
+        printf("dentro del if\n");
         
-        solucion = buscar_valor_en_pdb(abst,&current_state);
+        nodos_expandidos  += 1;
+        if (is_goal(&current_state)) {return solucion;}
 
-        printf("verificacion if\n");
-        //printf("prioridad actual %d \n", q.CurrentPriority());
-        //printf("prioridad a comparar %d \n", buscar_valor_en_pdb(abst,&current_state));
-        if (solucion >= buscar_valor_en_pdb(abst,&current_state)) {
-          printf("dentro del if\n");
-          
-          nodos_expandidos  += 1;
-          if (is_goal(&current_state)) {return solucion;}
-
-          printf("inicio iterador \n");
-          // se agregan todos los hijos del estado a la cola de prioridad
-          init_fwd_iter(&iter, &current_state);  // initialize the child iterator 
-          while( (ruleid = next_ruleid(&iter)) >= 0 ) {
-              printf("\n\ndentro del while\n");
-              apply_fwd_rule(ruleid, &current_state, &child);
-              ++childCount;
-              
-              //printf("child %d. ",childCount);
-              
-              print_state(stdout, &child);
-              solucion = buscar_valor_en_pdb(abst,&child);
-              printf("valor de solucion actual: %d \n",solucion);
-              if (is_goal(&child)) {return solucion;}
-              pq.push(child);
-              printf("hijo agregado a la cola\n");
-              printf("cantidad de estados en cola de prioridad: %ld \n", pq.size());
-              //printf("  %s (cost %d), goal=%d\n", get_fwd_rule_label(ruleid), get_fwd_rule_cost(ruleid), is_goal(&child));
-              nodos_generados += 1;
-          }
+        // se agregan todos los hijos del estado a la cola de prioridad
+        init_fwd_iter(&iter, &current_state);  // initialize the child iterator 
+        while( (ruleid = next_ruleid(&iter)) >= 0 ) {
+            apply_fwd_rule(ruleid, &current_state, &child);
+            ++childCount;
+            
+            //printf("child %d. ",childCount);
+            
+            print_state(stdout, &child);
+            solucion = buscar_valor_en_pdb(abst,&child);
+            printf("valor de solucion actual: %d \n",solucion);
+            if (is_goal(&child)) {return solucion;}
+            pq.push(child);
+            printf("cantidad de estados en cola de prioridad: %ld \n", pq.size());
+            //printf("  %s (cost %d), goal=%d\n", get_fwd_rule_label(ruleid), get_fwd_rule_cost(ruleid), is_goal(&child));
+            nodos_generados += 1;
         }
-        profundidad = solucion;
+      }
+      profundidad = solucion;
   }
   return profundidad;
 }
@@ -176,7 +170,6 @@ int main(int argc, char **argv)
 {
   state_t state;
   int cont, depth, total_depth;
-  abstraction_data_t* abstraccion;
   char line[ 4096 ];
 
   printf("argumentos: %s , %s \n", argv[1], argv[2]);
