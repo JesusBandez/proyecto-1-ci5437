@@ -24,8 +24,8 @@ psvn2c_abstraction.c:
 %.ida: %.c ${IMPLEMENTATION}/ida.cpp
 	$(CC) $(OPT) ${IMPLEMENTATION}/ida.cpp -include $< -o $@
 
-%.a: %.c ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp
-	$(CXX) $(OPT) ${IMPLEMENTATION}/priority_queue.hpp ${IMPLEMENTATION}/a_star.cpp -include $< -o $@
+%.a: %.c ${IMPLEMENTATION}/a_star.cpp
+	$(CXX) $(OPT) ${IMPLEMENTATION}/a_star.cpp -include $< -o $@
 	
 .PRECIOUS: %.c
 
