@@ -1,3 +1,5 @@
+# Ejecucion del proyecto.
+Dentro de la carpeta ./problems existen 4 carpetas para cada problema. Los problemas se compilan ejecutando el archivo ./compile.sh dentro de las subcarpetas de cada problema. Se puede ejecutar una prueba de cada problema ejecutando el archivo ./run_idas.sh
 # Objetivo
 
 El objetivo del proyecto es aprender sobre el modelo de espacio de estados y sobre
