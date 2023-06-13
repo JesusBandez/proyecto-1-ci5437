@@ -1,8 +1,36 @@
-#el .pdb debe estar en Definitions, en este caso 15puzzleAbstraction1.pdb
-./TopSpin12Token.a ../Definitions/TopSpin12EvenToken.abst ../Definitions/TopSpin12EvenToken.psvn < ../Definitions/GoalState12.txt
 
-./TopSpin14Token.a ../Definitions/TopSpin14EvenToken.abst ../Definitions/TopSpin14EvenToken.psvn < ../Definitions/GoalState14.txt
+echo "Astar"
+echo ">>>>>>>>>> 12Easy"
+time ./HanoiTower12Disk.a ../Definitions/HanoiTower12DiskAbstraction1BottomDiskLess ../Definitions/HanoiTower12DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p12d.d=005
+echo ""
+echo ">>>>>>>>>> 12Medium"
+time ./HanoiTower12Disk.a ../Definitions/HanoiTower12DiskAbstraction1BottomDiskLess ../Definitions/HanoiTower12DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p12d.d=2000
+echo ""
 
-./TopSpin17Token.a ../Definitions/TopSpin17EvenToken.abst ../Definitions/TopSpin17EvenToken.psvn < ../Definitions/GoalState17.txt
+echo ">>>>>>>>>> 12Hard"
+time ./HanoiTower12Disk.a ../Definitions/HanoiTower12DiskAbstraction1BottomDiskLess ../Definitions/HanoiTower12DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p12d.d=2000000
+echo ""
 
+echo ">>>>>>>>>> 14Easy"
+time ./HanoiTower14Disk.a ../Definitions/HanoiTower14DiskAbstraction3BottomDiskless ../Definitions/HanoiTower14DiskAbstraction11TopDiskless < ./Benchmark/hanoi_4p14d.d=005
+echo ""
 
+echo ">>>>>>>>>> 14Medium"
+time ./HanoiTower14Disk.a ../Definitions/HanoiTower14DiskAbstraction3BottomDiskless ../Definitions/HanoiTower14DiskAbstraction11TopDiskless < ./Benchmark/hanoi_4p14d.d=2000
+echo ""
+
+echo ">>>>>>>>>> 14Hard"
+time ./HanoiTower14Disk.a ../Definitions/HanoiTower14DiskAbstraction3BottomDiskless ../Definitions/HanoiTower14DiskAbstraction11TopDiskless < ./Benchmark/hanoi_4p14d.d=2000000
+echo ""
+
+echo ">>>>>>>>>> 18Easy"
+time ./HanoiTower18Disk.a ../Definitions/HanoiTower18DiskAbstraction7BottomDiskless ../Definitions/HanoiTower18DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p18d.d=005
+echo ""
+
+echo ">>>>>>>>>> 18Medium"
+time ./HanoiTower18Disk.a ../Definitions/HanoiTower18DiskAbstraction7BottomDiskless ../Definitions/HanoiTower18DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p18d.d=2000
+echo ""
+
+echo ">>>>>>>>>> 18Hard"
+time ./HanoiTower18Disk.a ../Definitions/HanoiTower18DiskAbstraction7BottomDiskless ../Definitions/HanoiTower18DiskAbstraction11TopDiskLess < ./Benchmark/hanoi_4p18d.d=2000000
+echo ""

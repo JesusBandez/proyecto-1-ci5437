@@ -1,0 +1,33 @@
+>>>>>>>>>> 17Medium
+Enter a start state (empty input line to quit): 9 0 1 11 4 10 7 5 14 2 3 13 8 6 15 12 16 
+bound: 9, expanded: 9, generated: 153
+bound: 10, expanded: 77, generated: 1309
+bound: 11, expanded: 3269, generated: 55573
+bound: 12, expanded: 63058, generated: 1071986
+bound: 13, expanded: 1423894, generated: 24206198
+bound: 14, expanded: 28803538, generated: 489660146
+bound: 15, expanded: 196545213, generated: 3341268521
+solved. solution cost: 15, expanded nodes: 226839058, generated nodes: 3856263886
+7 1 14 4 2 5 15 12 9 3 8 13 10 11 6 0 16 
+bound: 9, expanded: 57, generated: 969
+bound: 10, expanded: 317, generated: 5389
+bound: 11, expanded: 14447, generated: 245599
+bound: 12, expanded: 165754, generated: 2817818
+bound: 13, expanded: 4251321, generated: 72272457
+bound: 14, expanded: 63024219, generated: 1071411723
+bound: 15, expanded: 200609861, generated: 3410367508
+solved. solution cost: 15, expanded nodes: 268065976, generated nodes: 4557121463
+7 10 4 14 9 3 1 5 0 11 13 2 8 6 12 15 16 
+bound: 10, expanded: 46, generated: 782
+bound: 11, expanded: 1541, generated: 26197
+bound: 12, expanded: 35698, generated: 606866
+bound: 13, expanded: 870237, generated: 14794029
+bound: 14, expanded: 18147689, generated: 308510713
+bound: 15, expanded: 328303445, generated: 5581158432
+solved. solution cost: 15, expanded nodes: 347358656, generated nodes: 5905097019
+4 13 2 10 0 14 11 6 3 8 15 12 7 1 5 9 16 
+bound: 9, expanded: 175, generated: 2975
+bound: 10, expanded: 2217, generated: 37689
+bound: 11, expanded: 47114, generated: 800938
+bound: 12, expanded: 668983, generated: 11372711
+bound: 13, expanded: 11267006, generated: 191539102
